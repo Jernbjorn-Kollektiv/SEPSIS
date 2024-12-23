@@ -1,0 +1,99 @@
+- When infection initializes, it defaults to cellulitis
+- When infections go away, the infection index goes to 0 (no infection)
+- Infection type now displays on bare-minimum selection
+- Removed "-- Bacterial" in infection type dialog
+- Updated all firearm damages so they are instead their respective stopping powers
+- Got rid of the infinite using-hand debug message
+- Added stopping power modifier to all bullet types
+- Added dynamic stopping power for self-test-dummy (shows debug messages)
+   - Injured (Overall SP < Threshold)
+   - Incapacitated (Overall SP = Threshold)
+   - Overkilled (Overall SP > Threshold)
+- The screen now temporarily desaturates when the player is damaged
+- Displayed firerate is now 4000/specified firerate (specified firerate determines the delay between shots in frames
+- Changed the SA23 Specified Firerate to 8 (500 RPM)
+- Fixed blood where blood loss did not start until health menu was opened
+- Bone healing now also occurs simultaneous to other functions
+- Fixed crash when equipping armor
+- Added stamina bar
+    - Yellow for adrenaline
+    - Green for usable stamina
+    - Blue for thirst
+    - Red for tiredness
+- Changed max calories to 5000
+- Changed defaults for thirst (2775 mL) and tiredness (25%)
+- Added blood bar next to stamina bar
+- Added dynamic WHOLE blood loss calculations
+- Blood bar hover now displays current blood levels, blood loss per second, and estimated time till complete bleed out
+- Stamina bar displays usable energy, calories, tiredness, thirst, and adrenaline on hover
+- Changed adrenaline max to 1000
+- Implemented desaturation on hit in actual player (not just test dummy)
+- Adrenaline spikes when being shot (350-500) and gradually decreases before randomly shifting at basline (10-20)
+- Seeing enemies sets adrenaline between 250-320 assuming it is not already higher
+- Heart rate now dependent on adrenaline
+- Heart rate now heard audibly
+- Removed unnecessary additional jamming dialogue
+- "Check Pulse" health option now functional
+- Temporary sprint mechanism with shift (cannot run with gun in hand)
+- Energy consumption now also dependent on speed you are moving (more resources taken if sprinting)
+- Added temporary stamina bar that decreases when sprinting
+   - If you run for too long you are locked from sprinting again until temporary stamina reaches 25% again
+- Added bullet fracture probability
+- Attempted dynamic fractures upon bullet impact (P1)
+- Fixed infinite bone healing bug
+- Dynamic bone fractures when bullets pass through body (P2)
+- Added to bullet statistics
+  - Fracture type when bullet passes through bone
+  - Fracture type when bullet hits armor
+  - Fracture intensity when bullet hits armor
+- Moved Compound Fractures in the fracture array
+- Moved Pathological Fractures in the fracture array
+- Bullets now dynamically hit and fracture bones with varying intensity and type
+- Added dynamic armor-relative fractures to ALL armor levels (P3)
+- Added durability (condition modifier) to all armor pieces
+- Fixed bug where clothing sprites would show the large version upon being damaged
+- Added dynamic clothing sprites for each damage
+- Added dynamic explosion bone damage
+- Being inside of an explosion does the same damage to bones as multiple 12 gauge explosive rounds
+- Added dynamic enemy hitboxes
+- Improved bullet collisions
+- Fixed bug with high firerate weapons damaging player
+- Dynamic enemy hit-location calculation
+- Added enemy health value
+- Enemy stats now default off
+- Enemy health decreases by bullet+weapon stopping power
+- Fixed bug where player would be damaged by grenades thrown at enemies
+- Grenades now dynamically damage enemies
+- Enemies now have different armor protecting different locations
+   - All but torso armor defaults to Light - Level 1
+- Stopping power function now dynamically applies weapon damage
+- Bullets now inherently carry the force of the weapon they were shot from
+- Bullets now no longer double check for lack of armor, which previously resulted in multiple fractures, bleeds, and wounds from a single shot
+- Player damage dummy now has dynamic hitboxes that calculate damage based on location, armor, and all other modifiers
+- Can now purposely headshot enemies and player
+- Enemies, test dummy, and player now dynamically incapacitate
+   - Player does not yet go unconscious, but variable set to TRUE upon incapacitation
+   - Enemies fall but do not yet recover and are essentially dead
+- Grenades now dynamically incapacitate enemies, test dummy, and the player
+- Removed some debug messages that were unnecessary and taking up memory
+- Added player and enemy RESILIENCE
+   - Resilience increases the stopping power threshold for all body parts, making some enemies incapacitate faster or slower than others
+   - Player resiliencies starts at 0
+   - Test dummies default to 5 so they do not die immediately
+- Enemy stats default off visibly
+- Reimplemented audio effects for hitting enemy armor
+- Added enemy consciousness
+- Added complementary player consciousness (for function)
+- Added dynamic enemy pain (consciousness)
+   - If a bullet does not immediately incapacitate an enemy it will lower their consciousness
+   - Consciousness lowers by ((bullet stopping power + weapon damage) * 10) / (resilience)
+- Player resilience defaults to 1
+- Lowered all body part thresholds to accommodate for player resilience
+- Fixed bug where skeletal overlay would carry background to stats screen upon switching
+- Player consciousness resets to 0 upon becoming negative (prevents negative consciousness %)
+- Added enemy consciousness to enemy stats display (default still disabled)
+- Fixed bug where bullet collisions stacked injuries
+- Damage testing player dummy no longer moves
+- Hitboxes now follow based on angle of enemy, player, or dummy
+- Hitboxes now appear upon stat display
+- Full Advanced Ballistics Modelling (ABM 1.0) Implemented
