@@ -1,8 +1,10 @@
-Medium Update - Consciousness Recovery
+Small Update - Recovery State Improvements
 
-- Headshots have a 50% chance of fatality
-- Incapacitations produce a recovery time of (bullet SP+weapon SP) minutes
-- Overkills produce a recovery time of (bullet SP+weapon SP)*2 minutes
-- Player now takes a 'recovery time' after being shot to return back to above 10% consciousness where they can then proceed normally
-- The bleed-out time estimate on the quick-stats bar now registers in minutes and seconds instead of just seconds
-- Added consciousness bar to quick-stats
+- Fixed a bug where bullets that did not cause immediate incapacitation but lowered consciousness to 0 resulted in the ringing sound playing infinitely
+- Bullets that injure the player but cause unconsciousness now also have recovery time
+- Recovery time for injuries causing incapacitation now half that of immediate incapacitation
+- Item labels are not visible during recovery state
+- Lowered intensity of consciousness visual artifacts
+- Added ripple effect during lowered consciousness 
+- Recovery countdown is now precise per frame
+- Your consciousness cannot exceed 100-tiredness
