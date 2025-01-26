@@ -1,21 +1,4 @@
-Small Update - Inventory Enhancements & Fixes
+Patch - Inventory Boundaries and Non-Selected Item Shading
 
-- Fixed armor-label for shouldered weapons back to gun sprite
-- Resized backpack to 13x13
-- Added bar selection when inventory is open to select what type of items to see
-- Bar selection can be clicked to display items of a certain type
-   - All
-   - Firearms, melee weapons, grenades, scopes, sights, suppressors, and underbarrel items
-   - Ammunition, boxes, magazines, and speedloaders
-   - Food & Beverages
-   - Medical items
-   - Documents
-   - Clothing/armor
-   - Weapon components
-   - Resources
-   - Misc.
-- Non-selected item types are greyed out
-- Resized gun component sprites on grid
-- Moved gas mask sprite origin
-- Fixed gas mask on-player rendering (stretching)
-- Gas mask now a 2x2
+- Extended shifted inventory boundary down by 32 pixels to accomodate for new bar
+- Removed shading for items not of the selected type
