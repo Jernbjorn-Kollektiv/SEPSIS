@@ -1,24 +1,16 @@
-Medium Update - Advanced Nutrition
+Medium Update - Advanced Nutrition P2
 
-- All nutrients lower over time in resting state (stationary)
-- Certain nutrients lower over time in walking state
-- Certain nutrients lower over time in sprinting state
-- Fiber lowers in digestion state
-- Certain nutrients lower over time in injured state
-- Certain nutrients lower over time in starvation state
-   - Carbohydrates deplete faster when calories reach 0
-   - Fats deplete faster when carbohydrates reach 0
-   - Proteins deplete faster when carbohydrates reach 0
-- Moved nutrient hover-description for full visibility
-- Changed metabolism maximum to 0.25
-- Metabolism calculates and dynamically displays based on calorie consumption in current state
-- Changed metabolism unit to cal./sec. instead of cal./min.
-- Changed player energy, tiredness, and thirst back to max defaults
-- Removed some debug messages for optimization
-- Un-selected item type in inventory has a grey square instead of dynamic square colors
-- Changed calcium consumption for fractures
-- Assuming the shake is not already affected by arm or hand fractures, aim shake is determined by consciousness
-    - global.shake = (100-global.consioucness)/100/2
-- Removed misc. box overlay in bone-tangibles section of health
-- Zinc dynamically lowers with infection
-- Potassium dynamically lowers when thirst drops below 1/8 of max thirst
+- Rebalanced fat and sugar consumption
+- Fixed bug where adrenaline would spike in inventory randomly
+- Urination dynamically depletes certain nutrients
+- Inflammation lowers Omega-3 fatty acids
+- If Omega-3 fatty acids are above 0, they have a 5% chance every second of inflammation remedy
+- Dynamic medication use results in vitamin B depletion
+- Dynamic nutrition depletion based on bleeds
+- Dynamic nutrition depletion based on fractures
+- Fixed bug where open-inventory descriptions for items would show overlapping in stats menu
+- All stats can not go below 0 now
+- Liver damage lowers Vitamin A, D, & K Levels
+- Kidney damage lowers protein levels
+- Added "Conditions" & "Persistents" Labels on 4th Health tab
+- Fixed bug where pressing the urination button would cause urination immediately after pressing
