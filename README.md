@@ -1,16 +1,25 @@
-Medium Update - Advanced Nutrition P2
+Significant Update - Nutrient Deficiency Effects
 
-- Rebalanced fat and sugar consumption
-- Fixed bug where adrenaline would spike in inventory randomly
-- Urination dynamically depletes certain nutrients
-- Inflammation lowers Omega-3 fatty acids
-- If Omega-3 fatty acids are above 0, they have a 5% chance every second of inflammation remedy
-- Dynamic medication use results in vitamin B depletion
-- Dynamic nutrition depletion based on bleeds
-- Dynamic nutrition depletion based on fractures
-- Fixed bug where open-inventory descriptions for items would show overlapping in stats menu
-- All stats can not go below 0 now
-- Liver damage lowers Vitamin A, D, & K Levels
-- Kidney damage lowers protein levels
-- Added "Conditions" & "Persistents" Labels on 4th Health tab
-- Fixed bug where pressing the urination button would cause urination immediately after pressing
+- Added nausea condition
+- Added organ failure
+- Inflammation heal chance lowers with omega-3 fatty acid levels
+- Introduced 'heal factor'
+- Player heal factor (how fast bleeds and fractures remedy) decreases with omega-3 fatty acid levels
+- Added 'recovery factor' which determines how fast consciousness recovers
+- Added 'digestion factor' which determines how fast digestion happens and amount of nutrients absorbed from foods (determined by fiber %)
+- Fixed bug where digestion would lower fiber too quickly
+- Added headache condition
+- Added 'vulnerability factor' which can increase or decrease chance of infection
+   - Determined by hygiene, vitamins, and minerals
+- Added deficiency effects for fat, omega-3 fatty acids, carbs, sugar, protein, fiber, salt, vitamin A, and Thiamin
+- Added 'dermatitis' infection type
+- Added anemia condition
+- Added cataracts condition
+- Added 'rash' infection type
+- Added pellagra condition
+- Added hemarthrosis condition
+- Added cold condition
+- Added scurvy condition
+- Added osteomalacia condition
+- Added hypoxia condition
+- Added nutrient deficiency effects for riboflavin, niacin, vitamin E, folate, vitamin K, vitamin C, vitamin D, calcium, phosphorous, magnesium, potassium, iron, zinc, and copper
