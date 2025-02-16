@@ -1,25 +1,21 @@
-Significant Update - Nutrient Deficiency Effects
+Significant Update - Sleep System & Misc.
 
-- Added nausea condition
-- Added organ failure
-- Inflammation heal chance lowers with omega-3 fatty acid levels
-- Introduced 'heal factor'
-- Player heal factor (how fast bleeds and fractures remedy) decreases with omega-3 fatty acid levels
-- Added 'recovery factor' which determines how fast consciousness recovers
-- Added 'digestion factor' which determines how fast digestion happens and amount of nutrients absorbed from foods (determined by fiber %)
-- Fixed bug where digestion would lower fiber too quickly
-- Added headache condition
-- Added 'vulnerability factor' which can increase or decrease chance of infection
-   - Determined by hygiene, vitamins, and minerals
-- Added deficiency effects for fat, omega-3 fatty acids, carbs, sugar, protein, fiber, salt, vitamin A, and Thiamin
-- Added 'dermatitis' infection type
-- Added anemia condition
-- Added cataracts condition
-- Added 'rash' infection type
-- Added pellagra condition
-- Added hemarthrosis condition
-- Added cold condition
-- Added scurvy condition
-- Added osteomalacia condition
-- Added hypoxia condition
-- Added nutrient deficiency effects for riboflavin, niacin, vitamin E, folate, vitamin K, vitamin C, vitamin D, calcium, phosphorous, magnesium, potassium, iron, zinc, and copper
+- Added 'rest' full-body function
+- Player can only rest at 50% or more tiredness
+- Player can rest as long as they would like up to 0% tiredness
+- Resting reduces tiredness by 1% every second
+- Added changeable sleep-speed depending on desired game-time accuracy
+- Added changeable recovery-speed depending on desired game-time accuracy
+- The unconsciousness ring now no longer plays in death & does not overlap if permanently unconscious
+- Recovery timer and actually recovery to 10% consciousness are now accurate to the second in high and low speed recovery thresholds
+- Added N1, N2, N3, and REM sleep stages
+- Sleep stage changes as player sleeps continuously over time
+- Player can manually awake by moving as long as they are still in N1 sleep stage
+- Recovery speed default to 0.5
+- Sleep speed default to 0.005 (About 12 Hours needed for full tiredness remedy at 100% tiredness)
+- Each sleep state (N1, N2, N3, REM) speeds up tiredness remedy as sleep deepens
+- Separate dialogue window opens notifying player death, pressing OKAY terminates the game
+- Player can no longer move or turn while asleep
+- Screen blacks when player is asleep
+- Blood levels drop every frame as opposed to every second
+- 4dD3d tH3 {.?&2iu*(201(&^21$#ca32qp0\} COOOODDDEEKKKKKK r3D4cT3d
