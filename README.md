@@ -1,21 +1,18 @@
-Significant Update - Sleep System & Misc.
+Significant Update - Nutrition Polish: Part 1
 
-- Added 'rest' full-body function
-- Player can only rest at 50% or more tiredness
-- Player can rest as long as they would like up to 0% tiredness
-- Resting reduces tiredness by 1% every second
-- Added changeable sleep-speed depending on desired game-time accuracy
-- Added changeable recovery-speed depending on desired game-time accuracy
-- The unconsciousness ring now no longer plays in death & does not overlap if permanently unconscious
-- Recovery timer and actually recovery to 10% consciousness are now accurate to the second in high and low speed recovery thresholds
-- Added N1, N2, N3, and REM sleep stages
-- Sleep stage changes as player sleeps continuously over time
-- Player can manually awake by moving as long as they are still in N1 sleep stage
-- Recovery speed default to 0.5
-- Sleep speed default to 0.005 (About 12 Hours needed for full tiredness remedy at 100% tiredness)
-- Each sleep state (N1, N2, N3, REM) speeds up tiredness remedy as sleep deepens
-- Separate dialogue window opens notifying player death, pressing OKAY terminates the game
-- Player can no longer move or turn while asleep
-- Screen blacks when player is asleep
-- Blood levels drop every frame as opposed to every second
-- 4dD3d tH3 {.?&2iu*(201(&^21$#ca32qp0\} COOOODDDEEKKKKKK r3D4cT3d
+- Rebalanced urination salt-drop per second
+- Made urination deplete every frame of as opposed to second
+- Fixed bug where fullscreening would cause crash
+- If your consciousness is below 10, items will not drop out of your hands in the inventory, health menu, or stats screen
+- Rebalanced sugar-drop when adrenaline is high
+- Adrenaline is now a substitute for temporary-stamina if above 21 ng
+- Adrenaline depletes per frame, not per second
+- Adrenaline from seeing enemies only triggers once
+- Adrenaline used in rush state will deplete 1/2 of used adrenaline from usable energy after adrenaline returns to normal
+- Temporary stamina depleted by 1/2 of used adrenaline after adrenaline returns to normal levels
+- Blood cannot produce unless the required nutrients are above 0
+- Finished what's possible for this section of the nutrition-deficiency effects
+- Old-timer effect no longer displays if pressing 0
+- Improved gas-mask breathing animation
+- Added breathing in gas-mask sound-effect
+- If any organ conditions reach less than or equal to 0%, the player dies
