@@ -1,4 +1,86 @@
-Significant Update - Nutrition Polish: Part 1
+February Monthly Build
+
+- All nutrients lower over time in resting state (stationary)
+- Certain nutrients lower over time in walking state
+- Certain nutrients lower over time in sprinting state
+- Fiber lowers in digestion state
+- Certain nutrients lower over time in injured state
+- Certain nutrients lower over time in starvation state
+   - Carbohydrates deplete faster when calories reach 0
+   - Fats deplete faster when carbohydrates reach 0
+   - Proteins deplete faster when carbohydrates reach 0
+- Moved nutrient hover-description for full visibility
+- Changed metabolism maximum to 0.25
+- Metabolism calculates and dynamically displays based on calorie consumption in current state
+- Changed metabolism unit to cal./sec. instead of cal./min.
+- Changed player energy, tiredness, and thirst back to max defaults
+- Removed some debug messages for optimization
+- Un-selected item type in inventory has a grey square instead of dynamic square colors
+- Changed calcium consumption for fractures
+- Assuming the shake is not already affected by arm or hand fractures, aim shake is determined by consciousness
+    - global.shake = (100-global.consioucness)/100/2
+- Removed misc. box overlay in bone-tangibles section of health
+- Zinc dynamically lowers with infection
+- Potassium dynamically lowers when thirst drops below 1/8 of max thirst
+
+- Rebalanced fat and sugar consumption
+- Fixed bug where adrenaline would spike in inventory randomly
+- Urination dynamically depletes certain nutrients
+- Inflammation lowers Omega-3 fatty acids
+- If Omega-3 fatty acids are above 0, they have a 5% chance every second of inflammation remedy
+- Dynamic medication use results in vitamin B depletion
+- Dynamic nutrition depletion based on bleeds
+- Dynamic nutrition depletion based on fractures
+- Fixed bug where open-inventory descriptions for items would show overlapping in stats menu
+- All stats can not go below 0 now
+- Liver damage lowers Vitamin A, D, & K Levels
+- Kidney damage lowers protein levels
+- Added "Conditions" & "Persistents" Labels on 4th Health tab
+- Fixed bug where pressing the urination button would cause urination immediately after pressing
+
+- Added nausea condition
+- Added organ failure
+- Inflammation heal chance lowers with omega-3 fatty acid levels
+- Introduced 'heal factor'
+- Player heal factor (how fast bleeds and fractures remedy) decreases with omega-3 fatty acid levels
+- Added 'recovery factor' which determines how fast consciousness recovers
+- Added 'digestion factor' which determines how fast digestion happens and amount of nutrients absorbed from foods (determined by fiber %)
+- Fixed bug where digestion would lower fiber too quickly
+- Added headache condition
+- Added 'vulnerability factor' which can increase or decrease chance of infection
+   - Determined by hygiene, vitamins, and minerals
+- Added deficiency effects for fat, omega-3 fatty acids, carbs, sugar, protein, fiber, salt, vitamin A, and Thiamin
+- Added 'dermatitis' infection type
+- Added anemia condition
+- Added cataracts condition
+- Added 'rash' infection type
+- Added pellagra condition
+- Added hemarthrosis condition
+- Added cold condition
+- Added scurvy condition
+- Added osteomalacia condition
+- Added hypoxia condition
+- Added nutrient deficiency effects for riboflavin, niacin, vitamin E, folate, vitamin K, vitamin C, vitamin D, calcium, phosphorous, magnesium, potassium, iron, zinc, and copper
+
+- Added 'rest' full-body function
+- Player can only rest at 50% or more tiredness
+- Player can rest as long as they would like up to 0% tiredness
+- Resting reduces tiredness by 1% every second
+- Added changeable sleep-speed depending on desired game-time accuracy
+- Added changeable recovery-speed depending on desired game-time accuracy
+- The unconsciousness ring now no longer plays in death & does not overlap if permanently unconscious
+- Recovery timer and actually recovery to 10% consciousness are now accurate to the second in high and low speed recovery thresholds
+- Added N1, N2, N3, and REM sleep stages
+- Sleep stage changes as player sleeps continuously over time
+- Player can manually awake by moving as long as they are still in N1 sleep stage
+- Recovery speed default to 0.5
+- Sleep speed default to 0.005 (About 12 Hours needed for full tiredness remedy at 100% tiredness)
+- Each sleep state (N1, N2, N3, REM) speeds up tiredness remedy as sleep deepens
+- Separate dialogue window opens notifying player death, pressing OKAY terminates the game
+- Player can no longer move or turn while asleep
+- Screen blacks when player is asleep
+- Blood levels drop every frame as opposed to every second
+- 4dD3d tH3 {.?&2iu*(201(&^21$#ca32qp0\} COOOODDDEEKKKKKK r3D4cT3d
 
 - Rebalanced urination salt-drop per second
 - Made urination deplete every frame of as opposed to second
@@ -16,3 +98,18 @@ Significant Update - Nutrition Polish: Part 1
 - Improved gas-mask breathing animation
 - Added breathing in gas-mask sound-effect
 - If any organ conditions reach less than or equal to 0%, the player dies
+
+- Fixed error where vitamin A below 100 would change the vulnerability factor to 1.25 not 1.75
+- Fixed error where copper below 60,000 would change heal factor to 0.8 not 0.5
+- Rebalanced maxes for all nutrients
+- Changed 'max' dialogue in nutrient inspection to 'toxic'
+- Added 'urine build speed' factor that determine how fast urine levels increase
+- Renamed 'salt' to 'sodium'
+- Added 'thirst factor' which determines how fast hydration depletes
+- The player's consciousness cannot exceed their most damaged organ's condition
+- Added kidney stones condition
+- Added hypercalcemia condition
+- Added toxicity effects for all nutrients and minerals from 1/10 the max to max levels
+- Added fatigue effect reset once nutrient levels return to normal
+- Changed salt loss from urination to 0.02-0.05 per second not 0.2-0.5
+
