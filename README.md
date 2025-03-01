@@ -113,4 +113,3 @@ February Monthly Build
 - Added fatigue effect reset once nutrient levels return to normal
 - Changed salt loss from urination to 0.02-0.05 per second not 0.2-0.5
 
-
