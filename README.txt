@@ -1,0 +1,21 @@
+Significant Update - Medical Items: Part 1
+
+- Medical boxes now display separately in inventory filter from ammo boxes
+- Added small bandage box
+- Added small bandage
+- Containers containing fluids (dipstick) now display the fluid inside on hover and in-inventory
+- Fluid containers now display 'fluid-content' in % as opposed to condition %
+- Medical items that do not apply to the body (pills, etc.) do not yield an error upon attempting application
+- If an application item does not have a sound it no longer yields an error
+- Fixed bug where applied items could not add condition back to the injured location
+- Applied items now draw even when they are not selected
+- The mouse status now clears when applying medical items so it does not place and instantly get removed on application
+- Applied items now have dynamic visuals to show where they have been applied on the body
+- Applied items that affect bleeding now reduce the amount of time taken to heal a certain level bleed by the bleed-remedy factor
+- Added section in advanced health inspection that displays the item applied to the selected wound
+- Added antiseptic wipes
+- Applied items can now add treatment to open and closed wounds
+- Fluid loss in applied items cannot exceed the remainder of the fluid
+- Modifiers now determine the size of items drawn on the grid
+- Added butterfly bandages
+- Fixed minor visual overlaps with items in-inventory extended hover visual
