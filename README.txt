@@ -1,23 +1,20 @@
-Significant Update - Medical Items: Part 2
+Significant Update - Medical Items: Part 3
 
-- Bandage box can now hold antiseptic wipes
-- Added small gauze
-- Added parameter for medical items 'adhesive' (boolean)
-- Changed bandage box description and name to 'Small First Aid'
-- Changed first aid box sprite
-- Resource tab in inventory filter now checks for 'adhesive' item type
-- Added 60 yard duct tape roll
-- Certain medical items require 'adhesive'
-- To hold an adhesive-requiring medical item, -1 of whatever the unit is is subtracted
-   - Tape used to hold a cotton of gauze in an area will lose 1 yard
-- Default modifier amount is now 100, not 50
-- Adhesives now display the modifier for 'remaining uses' with a dynamic unit (tape is yds)
-- Fixed bug where removing an applied item with another item in hand would make one disappear
-- Added applied gauze dynamic visual
-- Bandage box now displays the top-most item in the box when hovered on
-- Added the 'open container' function which allows full viewing of items inside specific containers (small first aid)
-- Removing applied items now no longer yields a -4 as the ammo count
-- Changed max-stack for small bandage, butterfly bandage, and gauze to 10 instead of 1
-- Added container system which allows containers (boxes, mags, and guns) to maintain the modifiers of the items they are holding
-- Changed all mags, guns, and boxes to adapt to new container system
-- In-container selection menu allows for extracted modifier
+- Added regular gauze roll and dynamic applied visuals
+- Disinfected gauze rolls now reduce chance of infection when applied
+- Items can now be disinfected
+- Added disinfectant
+- Can no longer treat wounds more than level 5
+- Fixed depth-drawing bug with applied item visuals
+- Medical items that are not reusable now disappear when removed from the body
+- Fixed bug where player no longer pointed towards mouse
+- Added tiling aesthetic to flooring
+- Fixed lighting color
+- Can now turn player light on and off ("L")
+- Added infirmary to room
+- Changed 'Fluid' to 'Content' and 'Content' to 'Remaining'
+- Added clotting powder
+- Clotting powder reduces time bleeds take to heal
+- Fixed bug where applied modifications would carry to all applied items
+- Added elastic bandages
+- Added hemostatic gauze roll
