@@ -1,8 +1,22 @@
-Medium Update - Medical Items: Part 5
+Medium Update - Medical Items: Part 6
 
-- Added blood bags
-- Added dynamic liquid labels
-- Added dynamic liquid transfusion
-- Changed character model in-health menu
-- Added dynamic label coloring
-- Applied items now no longer display in the conditions and persistents health-tab
+- Condition sprites now apply to when objects are on the ground
+- Changed blood bag name to "IV Bag"
+- Dynamic modifier implementation allows for IV bag to hold Saline and Blood for same object
+- Dynamic modifier implementation allows for single sprite to be used for blood and saline IVs
+- Saline IV has distinct applied visual on arm
+- Changed absorption rate of supporting fluids to be dependent on FPS for higher accuracy
+- Applying Saline Drip to arm with tape now increases supporting fluid content when blood levels are low
+- Fixed bug where organ condition maximums did not change with blood content
+- Organ conditions cannot exceed your (blood levels+supporting fluids/5000)*100 
+    - Less blood can result in organ failure
+    - Saline or other supporting fluids can reduce risk of organ failure with high blood loss
+- Fixed bug with dynamic text coloring causing crash
+- Added drinking
+    - Player drinks 25 mL at a time
+- Fluid contents now dynamically reset once they are empty
+- Changed pressure injector fluid loss from 24.9 mL to 25 mL
+- Fixed effect dialogue for large bandage
+- Changed disinfectant and clotting powder effect dialogue
+- Added drinking audio
+- Improved audio when applying clotting powder
