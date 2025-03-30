@@ -1,22 +1,27 @@
-Medium Update - Medical Items: Part 6
+Significant Update - Medical Items: Part 7
 
-- Condition sprites now apply to when objects are on the ground
-- Changed blood bag name to "IV Bag"
-- Dynamic modifier implementation allows for IV bag to hold Saline and Blood for same object
-- Dynamic modifier implementation allows for single sprite to be used for blood and saline IVs
-- Saline IV has distinct applied visual on arm
-- Changed absorption rate of supporting fluids to be dependent on FPS for higher accuracy
-- Applying Saline Drip to arm with tape now increases supporting fluid content when blood levels are low
-- Fixed bug where organ condition maximums did not change with blood content
-- Organ conditions cannot exceed your (blood levels+supporting fluids/5000)*100 
-    - Less blood can result in organ failure
-    - Saline or other supporting fluids can reduce risk of organ failure with high blood loss
-- Fixed bug with dynamic text coloring causing crash
-- Added drinking
-    - Player drinks 25 mL at a time
-- Fluid contents now dynamically reset once they are empty
-- Changed pressure injector fluid loss from 24.9 mL to 25 mL
-- Fixed effect dialogue for large bandage
-- Changed disinfectant and clotting powder effect dialogue
-- Added drinking audio
-- Improved audio when applying clotting powder
+- Liquids can be used to wash SMALL contaminants out of wounds
+   - Liquids wash at 25 mL per splash
+- Contaminant now resets when the contaminant piece count falls at or below 0
+- Changed water bottle so it defaults as empty
+-  Item close-ups and descriptions can no longer be visible in the health menu on-hover
+- Changed the Disinfectant to "Disinfectant Bottle"
+- Changed the Clotting Powder to "Bottle of Clotting Powder"
+- Slightly changed sizing of hover-item dialogue
+- Added sound when washing out SMALL contaminants with liquid
+- Water cannot be drank again until the sound finishes
+- Fixed water bottle to show dynamic liquid image
+- Water bottle can now dynamically show it holding disinfectant, clotting powder, and blood
+- IV Bags, Alcohol Bottles, and Clotting Powder bottles now can dynamically hold any liquids
+- Fixed reset bug which caused a crash when trying to apply disinfected items
+- Fixed bug where treatment would not stay after wounds healed
+- Water can be applied to disinfectable items to add treatment level 1
+- All liquid containers can dynamically apply liquids to applicable items
+- Disinfect and clot functions combined into one function
+- Drinking isopropanol (disinfectant) poisons and kills you
+- Drinking clotting powder chokes and kills you
+- Player can shoot themselves with any gun (hold left control with gun in hand and left click)
+- Fixed bug where using some pre-loaded extended and clear VZ58 Magazines would cause a crash
+- Changed default sleep and recovery speeds
+- Fixed bug where game would crash when using SAL-COAG IV in right hand
+- Renamed pressure injector to "SAL-COAG IV Injector"
