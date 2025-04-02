@@ -1,27 +1,19 @@
-Significant Update - Medical Items: Part 7
+Medium Update - Adrenaline-Based Medical Items
 
-- Liquids can be used to wash SMALL contaminants out of wounds
-   - Liquids wash at 25 mL per splash
-- Contaminant now resets when the contaminant piece count falls at or below 0
-- Changed water bottle so it defaults as empty
--  Item close-ups and descriptions can no longer be visible in the health menu on-hover
-- Changed the Disinfectant to "Disinfectant Bottle"
-- Changed the Clotting Powder to "Bottle of Clotting Powder"
-- Slightly changed sizing of hover-item dialogue
-- Added sound when washing out SMALL contaminants with liquid
-- Water cannot be drank again until the sound finishes
-- Fixed water bottle to show dynamic liquid image
-- Water bottle can now dynamically show it holding disinfectant, clotting powder, and blood
-- IV Bags, Alcohol Bottles, and Clotting Powder bottles now can dynamically hold any liquids
-- Fixed reset bug which caused a crash when trying to apply disinfected items
-- Fixed bug where treatment would not stay after wounds healed
-- Water can be applied to disinfectable items to add treatment level 1
-- All liquid containers can dynamically apply liquids to applicable items
-- Disinfect and clot functions combined into one function
-- Drinking isopropanol (disinfectant) poisons and kills you
-- Drinking clotting powder chokes and kills you
-- Player can shoot themselves with any gun (hold left control with gun in hand and left click)
-- Fixed bug where using some pre-loaded extended and clear VZ58 Magazines would cause a crash
-- Changed default sleep and recovery speeds
-- Fixed bug where game would crash when using SAL-COAG IV in right hand
-- Renamed pressure injector to "SAL-COAG IV Injector"
+- Added adreno-injection
+   - Increases adrenaline by 100 ng
+- Added dedreno-injection
+   - Decreases adrenaline by 50 ng and adrenaline deficit by 25 ng
+   - Reduces heart rate by 25 BPM
+- Mouse shake no longer occurs holding shift with no weapons in-hand
+- Sprinting increases the heart rate rapidly
+- Cannot sprint if your heartbeat exceed 200 BPM
+- Adrenaline now dynamically affects heartrate instead of immediately (rise and fall gradually)
+- Aim shaking also increases with heartrate
+- Fixed bug where player could aim even after dropping the weapon
+- Added morphine injection
+    - Effects last 1 minute
+    - Hearrate is stable at 60 BPM
+    - Hand shaking is 0
+    - Outside sources do not affect heartrate or adrenaline
+- Added morphine drips
