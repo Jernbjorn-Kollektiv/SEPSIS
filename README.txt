@@ -1,19 +1,15 @@
-Medium Update - Adrenaline-Based Medical Items
+Medium Update - Pill-Based Medical Items
 
-- Added adreno-injection
-   - Increases adrenaline by 100 ng
-- Added dedreno-injection
-   - Decreases adrenaline by 50 ng and adrenaline deficit by 25 ng
-   - Reduces heart rate by 25 BPM
-- Mouse shake no longer occurs holding shift with no weapons in-hand
-- Sprinting increases the heart rate rapidly
-- Cannot sprint if your heartbeat exceed 200 BPM
-- Adrenaline now dynamically affects heartrate instead of immediately (rise and fall gradually)
-- Aim shaking also increases with heartrate
-- Fixed bug where player could aim even after dropping the weapon
-- Added morphine injection
-    - Effects last 1 minute
-    - Hearrate is stable at 60 BPM
-    - Hand shaking is 0
-    - Outside sources do not affect heartrate or adrenaline
-- Added morphine drips
+- Fixed bug where water would not wash out the correctly sized contaminant
+- Added medical pliers
+   - Can extract medium contaminants from wounds
+- Dynamic liquid condition coloring in-inventory on-hover
+- Added Immuno+
+   - Adds one treatment to random body parts/organs
+- Added probiotic tablets
+   - Adds one treatment to random body parts/organs
+   - Increases digestion factor by 0.2 per pill
+- All pills increase tiredness by 5%
+- Removed screenshake at low consciousness
+- Added cephazolin (antibiotic) drips
+   - All body parts and organs are 3+ treated
