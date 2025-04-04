@@ -1,15 +1,17 @@
-Medium Update - Pill-Based Medical Items
+Medium Update - Radiation Medical Items
 
-- Fixed bug where water would not wash out the correctly sized contaminant
-- Added medical pliers
-   - Can extract medium contaminants from wounds
-- Dynamic liquid condition coloring in-inventory on-hover
-- Added Immuno+
-   - Adds one treatment to random body parts/organs
-- Added probiotic tablets
-   - Adds one treatment to random body parts/organs
-   - Increases digestion factor by 0.2 per pill
-- All pills increase tiredness by 5%
-- Removed screenshake at low consciousness
-- Added cephazolin (antibiotic) drips
-   - All body parts and organs are 3+ treated
+- Treatment now goes down over time
+- Added iodine solution
+   - Drinking results in level 1 treatment of all body parts and -1 radiation to thyroid but 50% chance of nausea
+   - Applying to items (gauze rolls) adds disinfection level 2 and -1 radiation
+- Fixed probiotic and immuno+ so they can only treat up to level 1
+- The glass bottle now has sprites for each contained liquid
+- Changed name of disinfectant bottle to 'glass bottle'
+- Changed the color of disinfectant in the water bottle for more distinction
+- There is now an empty IV bag sprite
+- IV Bag resets when empty
+- Immuno+ and Probiotic Tablets now affect ALL body parts (not random)
+- Added iodine pills
+   - Same effects as immuno+ in addition to -1 radiation in all body parts
+- Fixed bug where crash would occur when radiated wounds go back to normal levels
+- Player can no directly splash isopropanol and iodine onto open wounds
