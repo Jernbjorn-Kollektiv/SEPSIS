@@ -1,11 +1,13 @@
-Medium Update - Pills & Bottles Overhaul
+Medium Update - Water Purity & Tourniquets
 
-- Fixed a bug where contaminants did not reset upon removal
-- Changed default liquid values so glass bottles can also hold pills
-- Changed dialogue and scripts for all pills and liquids to "Consume"
-- Added plastic pill bottle which defaults with Acetaminophen
-- Acetaminophen has the same effect as morphine for 30 seconds
-- Consumption function now dynamically reduces liquids below the 25 mL threshold
-- Resprited the glass bottle
-- Resprited the blister pack for improved dynamic liquid transfer
-- Glass and plastic bottles can now hold both liquids and pills
+- Added tourniquet
+   - Level 4 bleed healing speed
+   - Level 1 wound healing speed
+- Added water cleanliness
+- Added charcoal tablets
+   - Add 10% water purity
+- Water purity now displays in-hand and in-inventory modifiers
+- Blister pack pills can now be applied to items
+   - Only one that can is the charcoal tablets which clean water
+- Applied items for limbs now only display in the first health tab
+- Drinking water with higher impurity (less cleanliness) has higher chance of producing nausea condition
