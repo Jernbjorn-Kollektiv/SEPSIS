@@ -1,9 +1,15 @@
-Medium Update - Stitching System
+Significant Update - Bone Medical Items
 
-- Changed bleed remedy of tourniquet to 8 (from 4)
-- Added needle and thread (2 separate items)
-- Body parts can now be stitched with thread and needle (level 8 wound and bleed remedy)
-- Fixed bug where you could stack any items in-hand
-- Fixed a bug where the health could be closed while holding item with mouse, making inventory unable to open when closed
-- Stitching automatically removes once wound is completely healed, but cannot be removed during the process
-- When stitching, (3*open_wound_amount) yards of thread is used
+- Added splint item (fracture heal +2)
+- Added bone item application
+- Fracture items can only be applied to limbs
+- Added bone item application for each bone (ulna and radius have separate individuals splints, etc.)
+- Added dynamic healing for fractures that is now affected by any applied items
+- Fixed bug with previous bone-application where non-applied bones would cause a crash
+- Applicable fracture-based medical items now heal fractures faster
+- Added brace (+1 fracture heal)
+- Added dynamic applied-item visuals for the splint and brace
+- Bones can only hold one applied item now (fixes disappearing items)
+- All body parts passively heal 0.1% per second when not under any damage
+- Condensed script for determining the max condition of a bone
+- Bones now lower 15% max condition for every level of fracture (previously 10%)
