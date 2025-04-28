@@ -1,27 +1,17 @@
-Significant Update - Medical Items: Part 7
+Significant Update - Organ Medical Items, Clothing Redux, Misc.
 
-- Liquids can be used to wash SMALL contaminants out of wounds
-   - Liquids wash at 25 mL per splash
-- Contaminant now resets when the contaminant piece count falls at or below 0
-- Changed water bottle so it defaults as empty
--  Item close-ups and descriptions can no longer be visible in the health menu on-hover
-- Changed the Disinfectant to "Disinfectant Bottle"
-- Changed the Clotting Powder to "Bottle of Clotting Powder"
-- Slightly changed sizing of hover-item dialogue
-- Added sound when washing out SMALL contaminants with liquid
-- Water cannot be drank again until the sound finishes
-- Fixed water bottle to show dynamic liquid image
-- Water bottle can now dynamically show it holding disinfectant, clotting powder, and blood
-- IV Bags, Alcohol Bottles, and Clotting Powder bottles now can dynamically hold any liquids
-- Fixed reset bug which caused a crash when trying to apply disinfected items
-- Fixed bug where treatment would not stay after wounds healed
-- Water can be applied to disinfectable items to add treatment level 1
-- All liquid containers can dynamically apply liquids to applicable items
-- Disinfect and clot functions combined into one function
-- Drinking isopropanol (disinfectant) poisons and kills you
-- Drinking clotting powder chokes and kills you
-- Player can shoot themselves with any gun (hold left control with gun in hand and left click)
-- Fixed bug where using some pre-loaded extended and clear VZ58 Magazines would cause a crash
-- Changed default sleep and recovery speeds
-- Fixed bug where game would crash when using SAL-COAG IV in right hand
-- Renamed pressure injector to "SAL-COAG IV Injector"
+- Organ wounds can now be flushed out with liquids
+- Added new dynamic visual implementation for certain items
+- Bandages can now be tightly rolled/unrolled with left click
+- Can now place rolled up bandages in organ wounds
+- Temporarily removed dynamic clothing-condition sprites
+- Cleanliness now no longer displays on non-applicable items in-inventory on-hover
+- Adhesives now correctly color their remaining uses in-inventory on-hover
+- Resprited both boots, gloves, helmet, and the coat
+- Clothing items that have carrying capacity >0 can now be folded
+- Clothing items that have carrying capacity >0 cannot be put in other clothing items unless they are folded
+- Can fold clothing only when it is empty
+- Fixed in-hand sizing for shirt, boots, coat, backpack, and misc.
+- If the player tries to place an unfolded clothing item in another, a message will pop up
+- Moved strapped stick on-grid
+- Fixed dot-counter so it now displays mineral facts for foods in-inventory on-hover
