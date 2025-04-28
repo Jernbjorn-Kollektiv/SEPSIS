@@ -1,15 +1,17 @@
-Significant Update - Bone Medical Items
+Significant Update - Organ Medical Items, Clothing Redux, Misc.
 
-- Added splint item (fracture heal +2)
-- Added bone item application
-- Fracture items can only be applied to limbs
-- Added bone item application for each bone (ulna and radius have separate individuals splints, etc.)
-- Added dynamic healing for fractures that is now affected by any applied items
-- Fixed bug with previous bone-application where non-applied bones would cause a crash
-- Applicable fracture-based medical items now heal fractures faster
-- Added brace (+1 fracture heal)
-- Added dynamic applied-item visuals for the splint and brace
-- Bones can only hold one applied item now (fixes disappearing items)
-- All body parts passively heal 0.1% per second when not under any damage
-- Condensed script for determining the max condition of a bone
-- Bones now lower 15% max condition for every level of fracture (previously 10%)
+- Organ wounds can now be flushed out with liquids
+- Added new dynamic visual implementation for certain items
+- Bandages can now be tightly rolled/unrolled with left click
+- Can now place rolled up bandages in organ wounds
+- Temporarily removed dynamic clothing-condition sprites
+- Cleanliness now no longer displays on non-applicable items in-inventory on-hover
+- Adhesives now correctly color their remaining uses in-inventory on-hover
+- Resprited both boots, gloves, helmet, and the coat
+- Clothing items that have carrying capacity >0 can now be folded
+- Clothing items that have carrying capacity >0 cannot be put in other clothing items unless they are folded
+- Can fold clothing only when it is empty
+- Fixed in-hand sizing for shirt, boots, coat, backpack, and misc.
+- If the player tries to place an unfolded clothing item in another, a message will pop up
+- Moved strapped stick on-grid
+- Fixed dot-counter so it now displays mineral facts for foods in-inventory on-hover
