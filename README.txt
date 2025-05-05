@@ -1,17 +1,17 @@
-Significant Update - Organ Medical Items, Clothing Redux, Misc.
+Significant Update - Body Heat & Clothing Overhaul
 
-- Organ wounds can now be flushed out with liquids
-- Added new dynamic visual implementation for certain items
-- Bandages can now be tightly rolled/unrolled with left click
-- Can now place rolled up bandages in organ wounds
-- Temporarily removed dynamic clothing-condition sprites
-- Cleanliness now no longer displays on non-applicable items in-inventory on-hover
-- Adhesives now correctly color their remaining uses in-inventory on-hover
-- Resprited both boots, gloves, helmet, and the coat
-- Clothing items that have carrying capacity >0 can now be folded
-- Clothing items that have carrying capacity >0 cannot be put in other clothing items unless they are folded
-- Can fold clothing only when it is empty
-- Fixed in-hand sizing for shirt, boots, coat, backpack, and misc.
-- If the player tries to place an unfolded clothing item in another, a message will pop up
-- Moved strapped stick on-grid
-- Fixed dot-counter so it now displays mineral facts for foods in-inventory on-hover
+- Got rid of "Capacity" dialogue on-hover of equipped clothing
+- Added "Cold-Insulation" and "Heat-Insulation" to all clothing items
+- Cold and Heat Insulations now display when hovering on armor pieces
+- Fixed bug where gas mask sound would continue playing after taking mask off
+- Body temperature now dynamically changes in persistents
+- Clothing items now dynamically add to total cold and heat insulation values
+- Body temperature dynamically heats and cools based on environment temp, clothing insulation, sweat rate, activity, and more
+- Added advanced sweat and metabolism calculation
+- Hygiene now dynamically drops with sweat rate
+- Slimmed quick-stats
+- Added body-temp to quick-stats
+- Can now hover on all quick-stats to show extra information
+- Consciousness tiredness deficit now displays in quick-stats
+- Added total cold and heat insulation in-inventory
+- Resprited the main clothing items in-inventory
