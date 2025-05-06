@@ -1,17 +1,21 @@
-Significant Update - Body Heat & Clothing Overhaul
+Significant Update - Equipping System Redux
 
-- Got rid of "Capacity" dialogue on-hover of equipped clothing
-- Added "Cold-Insulation" and "Heat-Insulation" to all clothing items
-- Cold and Heat Insulations now display when hovering on armor pieces
-- Fixed bug where gas mask sound would continue playing after taking mask off
-- Body temperature now dynamically changes in persistents
-- Clothing items now dynamically add to total cold and heat insulation values
-- Body temperature dynamically heats and cools based on environment temp, clothing insulation, sweat rate, activity, and more
-- Added advanced sweat and metabolism calculation
-- Hygiene now dynamically drops with sweat rate
-- Slimmed quick-stats
-- Added body-temp to quick-stats
-- Can now hover on all quick-stats to show extra information
-- Consciousness tiredness deficit now displays in quick-stats
-- Added total cold and heat insulation in-inventory
-- Resprited the main clothing items in-inventory
+- Slightly changed some visuals for clothing items
+    - Outlining
+    - Shirt Lip
+    - Pant shading
+    - Coat length, hood, and misc.
+- Shirt is now red for distinction
+- Fixed pants grid-spacing
+- Total Insulation now no longer displays when an item is selected in-inventory
+- Belt armor description box now larger on-hover to accommodate for new cold and heat insulation values
+- Fixed depth bugs with armor boxes on-hover
+- Insulation now displays below armor boxes on-hover to avoid depth issues
+- Got rid of white boxes when equipping armor
+- Added advanced binding boxes for armor equipping
+- Redid armor equipping system so it is now accurate to the highlighted portion
+- Fixed boot sprite directions
+- Fixed glove direction
+- Refit gas mask visual on-player
+- Resized helmet in-inventory
+- Redid shoulderable gun visuals
