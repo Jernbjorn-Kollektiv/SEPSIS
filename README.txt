@@ -1,21 +1,17 @@
-Significant Update - Equipping System Redux
+Significant Update - Food Rotting & Clothing Sprites
 
-- Slightly changed some visuals for clothing items
-    - Outlining
-    - Shirt Lip
-    - Pant shading
-    - Coat length, hood, and misc.
-- Shirt is now red for distinction
-- Fixed pants grid-spacing
-- Total Insulation now no longer displays when an item is selected in-inventory
-- Belt armor description box now larger on-hover to accommodate for new cold and heat insulation values
-- Fixed depth bugs with armor boxes on-hover
-- Insulation now displays below armor boxes on-hover to avoid depth issues
-- Got rid of white boxes when equipping armor
-- Added advanced binding boxes for armor equipping
-- Redid armor equipping system so it is now accurate to the highlighted portion
-- Fixed boot sprite directions
-- Fixed glove direction
-- Refit gas mask visual on-player
-- Resized helmet in-inventory
-- Redid shoulderable gun visuals
+- Fixed orange having description as name
+- Resized apple image so it centers in-inventory grid
+- Fixed watch image
+- Re-added dynamic condition images for ALL items with conditions
+- New dynamic visual system for clothing items
+- Resized UI box displaying ammo-type when hovering on firearms
+- Resized apple and orange in-hand
+- Added rotting system
+- Added dynamic rot images for apple and orange
+   - Rot based on temperature of surrounding environment
+   - Fully rotted foods now disappear
+   - Occurs on-ground, in-hand, in-mouse, and in-inventory
+- Fixed spacing of in-hand dialogue for shirt-size and condition
+- Added 'Bites Left' and 'Rot' in-hand on-hover dialogue and in-inventory on-hover
+- Changed default heat-change rate from 0.01 to 0.001
