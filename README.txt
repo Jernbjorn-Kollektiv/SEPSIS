@@ -1,6 +1,25 @@
-Medium Update - Clothing Patch & Backpack Saving
+Engine Update - Saving, Dampness, and Heating System
 
-- Fixed a bug where removing and reapplying clothing would result in a crash
-- Partially implemented a saving mechanism for the backpack (very buggy)
-  - Press 1 to save backpack and 2 to load (load only when backpack-less)
-- Fixed minor insulation bugs
+- Full implementation of backpack saving
+- Added inventory saving for every clothing item
+- Removed consistent unnecessary debug messaging to save resources
+- Non-saved clothing now no longer saves
+- Fixed equipping architecture for pants
+- Fixed sizing issue for pants-box dialogue on-hover
+- Loaded clothing now properly sorts in the clothing array for automatic viewing
+- Loaded clothing now automatically adds insulation
+- Fixed a consistent foundational bug which crashed upon moving items from the right hand]
+- Successfully implemented full torso, leg, and coat loading
+- Added loading for head-clothing (helmet), face-clothing (mask), shoulder-items (sling rifles)
+- Saving and loading now occurs on a save-id architecture instead of save-name
+- Added save-ids to all items
+- If a firearm is slung on the shoulder and saved it now saves the ammo inside
+- Added full saving and loading for wrists
+- Fixed wrist item framing issues (watch and copper band)
+- All items can now dampen
+- Dampness level now displays on all items in-inventory
+- Fixed metabolism calculation to remedy overheating too easily
+- Resprited the shirt, pants, and coat
+- Dampness now displays on clothing
+- Rebalanced heating and cooling system
+- Damp clothing takes longer to heat but cools faster
