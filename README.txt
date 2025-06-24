@@ -1,25 +1,45 @@
-Engine Update - Saving, Dampness, and Heating System
+Significant Update - Heating Finalized and ABS 3.0 Intro
 
-- Full implementation of backpack saving
-- Added inventory saving for every clothing item
-- Removed consistent unnecessary debug messaging to save resources
-- Non-saved clothing now no longer saves
-- Fixed equipping architecture for pants
-- Fixed sizing issue for pants-box dialogue on-hover
-- Loaded clothing now properly sorts in the clothing array for automatic viewing
-- Loaded clothing now automatically adds insulation
-- Fixed a consistent foundational bug which crashed upon moving items from the right hand]
-- Successfully implemented full torso, leg, and coat loading
-- Added loading for head-clothing (helmet), face-clothing (mask), shoulder-items (sling rifles)
-- Saving and loading now occurs on a save-id architecture instead of save-name
-- Added save-ids to all items
-- If a firearm is slung on the shoulder and saved it now saves the ammo inside
-- Added full saving and loading for wrists
-- Fixed wrist item framing issues (watch and copper band)
-- All items can now dampen
-- Dampness level now displays on all items in-inventory
-- Fixed metabolism calculation to remedy overheating too easily
-- Resprited the shirt, pants, and coat
-- Dampness now displays on clothing
-- Rebalanced heating and cooling system
-- Damp clothing takes longer to heat but cools faster
+- Removed small vignette from view
+- Reworked some lighting effects
+- Added parallax system
+- Disinfecting now dampens object
+- If the torso is hit, bullets can pass through the backpack and damage items inside dynamically
+- If something holding a liquid is shot, it dynamically drains in the backpack, hand, and on the ground
+- Liquids draining in backpack will dampen other items
+- Damp firearms will wear faster and jam more often
+- Items now dynamically dry off in clothing items if damp (not in use)
+- Cannot load inventory infinitely
+- Fixed file saving architecture so text files are closed and RAM clutter is limited
+- Draining and rotting as well as other per-frame processes in-inventory operate every-frame, not just when open
+- Lighting darkened again
+- Fixed heating bug where overheating would occur infinitely due to dividing by zero (dampness factor)
+- Added second bar for environment quick-stats to show the range body-heat is trying to achieve
+- Completely revamped and rebalanced the insulation and overall heat system
+- Fixed dry guns from not degrading
+- Body temperature now stabilizes more effectively
+- Sweating now affects hygiene at a slower rate
+- Resized hover-item names and displayable modifiers (size and top-most round type)
+- The top-most loaded bullet now displays when applicable items are hovered on
+- Player has a chance of getting a fever that increases as the temperature decreases
+- Fever decreases consciousness with activity and increases in severity with tiredness - is remedied once tiredness is reduced to 10% or less
+- Conditions can now dynamically remedy
+- Fixed 'every-second-effects' for conditions
+- Decreased average pill tiredness increase from 5 to 2%
+- Added melatonin (sleeping pills) which increase tiredness by 10%
+- All firearms now have intentional trigger resistance, meaning the mouse must be pressed at a certain intensity for a weapon to fire
+- Added dynamic mouse deadzones for clean trigger resistance
+- All triggers now spawn with a sensitivity level
+- Trigger sensitivity displays on-hover in-inventory and in-hand
+- Can dynamically swap out triggers with different sensitivities
+- Added cardiovascular system sprite in the first health tab to make more clear the cardiovascular screen
+- Added 'energy' projectile specifications so the energy pistol can be used on the player without crashing
+- Resprited all sights
+- Added unique revolver sight
+- Fixed bug where mouse sprite would randomly switch between alternative mice sprites
+- All firearm sights have dynamic depth foveation
+- Depth foveation is disabled for attached sights
+- Resized all gun components to fit based on their realistic sizes
+- Gun barrels now size differently and appear uniquely
+- Fixed a bug with modifier values when field stripping components
+- Aim foveating is now smoother and not choppy
