@@ -1,45 +1,78 @@
-Significant Update - Heating Finalized and ABS 3.0 Intro
+System Update - Memory, Journaling, Mapping, Patches, & More
 
-- Removed small vignette from view
-- Reworked some lighting effects
-- Added parallax system
-- Disinfecting now dampens object
-- If the torso is hit, bullets can pass through the backpack and damage items inside dynamically
-- If something holding a liquid is shot, it dynamically drains in the backpack, hand, and on the ground
-- Liquids draining in backpack will dampen other items
-- Damp firearms will wear faster and jam more often
-- Items now dynamically dry off in clothing items if damp (not in use)
-- Cannot load inventory infinitely
-- Fixed file saving architecture so text files are closed and RAM clutter is limited
-- Draining and rotting as well as other per-frame processes in-inventory operate every-frame, not just when open
-- Lighting darkened again
-- Fixed heating bug where overheating would occur infinitely due to dividing by zero (dampness factor)
-- Added second bar for environment quick-stats to show the range body-heat is trying to achieve
-- Completely revamped and rebalanced the insulation and overall heat system
-- Fixed dry guns from not degrading
-- Body temperature now stabilizes more effectively
-- Sweating now affects hygiene at a slower rate
-- Resized hover-item names and displayable modifiers (size and top-most round type)
-- The top-most loaded bullet now displays when applicable items are hovered on
-- Player has a chance of getting a fever that increases as the temperature decreases
-- Fever decreases consciousness with activity and increases in severity with tiredness - is remedied once tiredness is reduced to 10% or less
-- Conditions can now dynamically remedy
-- Fixed 'every-second-effects' for conditions
-- Decreased average pill tiredness increase from 5 to 2%
-- Added melatonin (sleeping pills) which increase tiredness by 10%
-- All firearms now have intentional trigger resistance, meaning the mouse must be pressed at a certain intensity for a weapon to fire
-- Added dynamic mouse deadzones for clean trigger resistance
-- All triggers now spawn with a sensitivity level
-- Trigger sensitivity displays on-hover in-inventory and in-hand
-- Can dynamically swap out triggers with different sensitivities
-- Added cardiovascular system sprite in the first health tab to make more clear the cardiovascular screen
-- Added 'energy' projectile specifications so the energy pistol can be used on the player without crashing
-- Resprited all sights
-- Added unique revolver sight
-- Fixed bug where mouse sprite would randomly switch between alternative mice sprites
-- All firearm sights have dynamic depth foveation
-- Depth foveation is disabled for attached sights
-- Resized all gun components to fit based on their realistic sizes
-- Gun barrels now size differently and appear uniquely
-- Fixed a bug with modifier values when field stripping components
-- Aim foveating is now smoother and not choppy
+- Vsync disabled default
+- Constructed base screen for player memories
+- Player stats screen now has 3-dot option implementation for multiple pages
+- Implemented memory screen into player stats
+- Added the "Allergy Test" test memory
+
+- Memories now have dates, text, and more
+- All base-visible memory attributes now display
+- Memory short/long-term definition displayed as colored dot (orange = short, green = long)
+- Trigger sensitivity now no longer displays in-inventory on-hover for firearms
+- Resized the VZ58 sprite to save resources and fit new character
+- Resized the VZ54 sprite to save resources and fit new character
+- Changed rotation of shotgun and bat sprite to match other firearms
+- Implemented new sprite centering in-inventory on-hover closeup
+- Goliath Red-Dot and Zenith Holosights are now color-coded
+- All attachments, sights, and scopes have resized sprites to match the new centered sprite system
+- Descriptions now center in-inventory on-hover
+- Resized and trimmed all ammo sprites to now fit in-hand and in-inventory on-hover display
+
+- Added images for memories
+- Added new draw system for unique font and text modification
+
+- Base memories lengthened
+- Formatted coloring and effects for base memories
+- Implemented alignment for memory text
+
+- Memory screen now closes when switching back to main health screen
+- Added head-injury and world-entry sprite backgrounds for memory screen
+- Added blood-test memory
+- Can now close all menus with "C"
+- Pressing Tab in-health or in-stats causes jump-back to inventory
+- Added journal (press "J" to open)
+- Memory is now moved to the player journal (page 1)
+- Added new journal background UI
+- Shifted the memory components over by 32 pixels
+- The journal has its own unique font
+
+- Added milestone page to journal which shows kill stats
+- Added base map-editing system
+
+- Changed map drawing point to a white dot
+- Pen size can be increased/decreased with W and S
+- Pen size is proportional to map zoom
+
+- Map now defaults in the middle of the screen
+- Each consecutive draw on the map draws on top of that last
+- Added full color selection, color display, and size display in-map drawing
+
+- Resprited the overlay for the zenith holosight
+- Resprited the 2x scope overlay
+- Optics now have dynamic foveation like iron sight
+- Added dynamic spriting for broken optics
+- Resized collisions for all optic overlays
+- In-hand display of condition now colors correctly
+
+- Fixed bug where firearm chamber status was not persistent when swapping the gun between hands by dropping it and picking it back up
+- Goliath red dot now fully resprited
+
+- Fixed default bullet speed for the VZ58 from 164 to 64 (like others)
+- Added in-engine variable which can turn on and off screenshaking when shooting (defaults on)
+- Added in-engine magnitude variable for screenshake when shooting (changed from 15 to default 5)
+- Gunshot line now does not extend its X-Scale by 3
+- All firearm attachments now reset all modifiers when attached
+- A filter now applies to memories which intensifies as their stability lowers
+- Memories below a stability of 0 now are forgotten and removed from the memory interface
+- Spinning load sign is now a higher resolution
+- Redid some loading screen UI elements
+- Notifications now have a darker UI background to distinguish it
+- Notifications now play sounds depending on their reason for conception
+
+- Reset default health values as preperation for Public Demo 2 in near future
+- Load screen has minor additions and changes
+- Clock hands have been resized to match the clock face
+- Adrenaline is now accurately depicted on the player-energy quick-stat
+- Adrenaline can now no longer exceed the maximum player energy
+- Fixed some UI texture drawing bugs in fullscreen
