@@ -1,298 +1,201 @@
-SEPSIS V1 1.4.8.31.25.1 (1.4) - ABS 3.0 Update
-Update Pushed on 31 August, 2025 
+SEPSIS V1 1.5.12.31.25.1 (1.5 Update)
+Update Pushed on 31 December, 2025 
 Bjørn - Jernbjørn Kollektiv - Team Titanium
 
 --------------------------------------------
 KEY FEATURES
 --------------------------------------------
-- Precise-Aim System
-- New Bullet Ballistics
-- Enhanced Weapon Visuals
-- New Player Bullet-Damage System
-- New Armor Penetration System
-- New Enemy Damage System
-- Enemy Combat Personality System (Part 1)
-- Rail, Optic, & Mounting System
-- Gun Attachment Inspection
-- Gas Mask Filter System
-- Enhanced Weapon Maintenance, Cleaning, & Repair
-- Noise Detection & Suppressor Sound System
-- Major Bug Fixes & Quality of Life Improvements
+
+- Enhanced Enemy Thinking
+- Enemy Detection, Scouting, Searching, & Cover AI
+- Enemy Pathfinding AI
+- Plate Carriers, Chest Rigs, Armor Plates, and Utility Pouches
+- Cars and Chinook
 
 --------------------------------------------
 COMPLETE CHRONOLOGICAL CHANGELOG
 --------------------------------------------
-- Added UI for when aiming at any enemy
-- Added line-of-sight system for line-to-wall collisions
-- Added UI for 'Precise-Aim,' activated by aiming while hovering on the enemy you want to shoot
-- Added bullet height which determines how high the player is aiming
-- Enemies now have their own heights and precise-aim sprites that display in the Precise-Aim UI
-- Fixed bug which allowed player to equip a sight without removing the already attached one
-- Enemies have been recolored for more apparent distinction
-- The zenith holosight overlay now displays twice as large
-- Optic modifiers now reset when removed to avoid bugs
-- Added adrenaline tolerance (over time the player will become used to adrenaline and stimulants will produce less)
-- Base Precise-Aim system implemented
 
-- Added bullet drop-off
-- Added bullet velocity drop-off
-- Rebalanced weapon velocities
-- Added trail effect to bullets
-- Added damage markers for when enemies are hit by projectiles, showing the elevation at which it hit
+- Added new enemy trait "Inquisition" which determines what they do when detecting nearby noise
+- Added unique enemy FOV, Visual Depth, Visual Acuity, Listening Range, & Listening Depth which affect player detection
+- Doubled the height of the sound level bar
+- Enemies look in the direction of any sound they detect
+- Dropping and throwing items now produces a sound
 
-- Rebalanced system for bullet drop
-- Added sprites for the player holding each type of firearm
-- Added new muzzle positioning for more accurate discharge from the end of the barrel
-- Added small muzzle explosion and flash
+- Improved muzzle flash lighting
+- Added atmospheric default lighting to the gun room
+- Added FOV detection to enemies
+- Added line-of-sight obstruction for enemies so they cannot see through walls
+- Enemies now point in the direction of the detected player
+- Improved debug FOV visuals
 
-- Screenshake bug fixed when firing firearms
-- Added bolt-action open and close animation
-- Added pistol chamber animation
-- Added rifle chamber animation
-- Extended rifle chamber sound to accompany new visuals
+- Enemies now delay being alarmed by visual detection based on visual acuity stat
+- Enemy acuity delay quickens if the player is closer
+- Added visual acuity representation for enemies in debug
+- Added "team-play" trait to enemies which determines how well they work with their teammates
+- Enemies no longer detect when incapacitated
+- Added dynamic pathfinding to enemies
+- Enemies automatically engage detected player
+- Rebalanced sound and noise detection
 
-- Added shotgun animation open and close animation
-- Realigned shotgun open audio to accommodate for new animation
+- Rebalanced sprinting heartrate increase per second
+- Added top speed and engage distance to enemies
+- Added enemy scouting
+- Added enemy searching
 
-- Added animation for SMG's and Rifles when switching fire modes
-- Added visible recoil in hands (bump) when firing weapons
+- Started setup for enemy cover system
 
-- Added rifle mag remove animation
+- All walls have dedicated cover locations
+- Added primitive cover seeking function for enemies
 
-- Added a new bullet-hit allocator for the player
-- Hit-locations now display on the player's body when hit
-- Added new impact calculator which determines which limb has been hit
+- Enemies now take cover when shot at
+- Enemies move between cover if their spot is discovered
+- Enemies pathfind to the most ideal cover location when necessary
+- Allowed bullet passthrough across cover overlays (bug)
 
-- Changed hit marker image
-- Added new damage calculation system for limbs, bones, and organs based on the exact location that was shot
-- Changed depth management for organs when hovered over
-- Added dynamic clothing damage for new limb damage calculation
-- Bones now color blue when hovered on
-- Added dynamic recoil that moves the aim height up for every shot
+- Enemies no longer spin when incapacitated
+- Enemies hit with grenades can no longer crash the game
+- Enemy damage from grenades significantly reduced temporarily
+- Fixed issue where enemies scouting for player would loop through prior path
+- All ammo now have individual object-penetration (separate from flesh penetration) values
+- Reduced grid-size for both the VZ-58 and VZ-54 in-inventory by 1 row from the bottom
+- Player now gets adrenaline rush from seeing ACTIVE enemies, not test dummies
+- Fixed bug where liquids could be transferred and exceed carrying capacity
+- Added visual representation of pills in water bottle
+- Added gas can
+- Added gasoline liquid
+- Player dies if they drink gasoline
+- Can apply gasoline to medical items
+- Added flammability to wounds
+- Applying gasoline to open wounds increases flammability
+- Areas with high flammability can ignite when shot
+- Ignited body parts increase treatment level but cause burning based on flammability
+- Added cauterization function
 
-- Changed visuals for health screen slightly
-- Changed hover-collisions for health screen organs and limbs
-- Added precise-damage for limbs, bones, and organs
+- Fixed bug which did not allow player to drink gasoline
+- Added car object & sprite
+- Pouring sound actually stops when done pouring
+- Added gas fill sound
+- Added ability to open gas tank of car
+- Added ability to fuel car
+- Player can enter car
+- Player can accelerate, brake, steer, drift, and reverse car
+- Added car lighting
+- Added car ignition
 
-- The rate at which aim-height can be adjusted increases with distance to emulate smaller targets further away
-- Redid calculation for if the brain is shot
-- Damaging pixels now scale based on the stopping power of the bullet
-- Damaging pixels now display as light hues around the hit location
-- The precise-aim screen now displays for the player-dummy for accurate shot-placement testing
-- Reimplemented new penetration system for armors
-- Bones now fracture when bullets do not penetrate (from kinetic dump)
-- Hit-markers are red when the bullet passes armor and blue if it only hits the player but does not pass
-- All limbs and organs now have dynamic bleed calculations (certain areas have higher vascular density now)
+- More accurate car steering based on straightening out wheels after turn
+- Just headlights flicker on during ignition
+- Car reverses accurately based on direction of wheels
+- Temporarily disabled physics until resolving bullet velocity issue
 
-- All contact bones from a damaging pixel are now damaged
-- Fixed bug where contacted bones would not be damaged any further from rapid-fire after previously taking damage
-- Added wound-coverage values to all bullets which affects the size of the damaging pixel when spawned
-- Resized the damaging pixel to look smoother at larger sizes
-- Grenades now affect the body and are fixed
-- Slightly changed death screen
-- Fragments of fragmentation grenades have temporarily been disabled
+- Added halogen flicker sound
+- Fixed physics issue where bullets were affect by room-physics
+- Car now runs off of traditional velocity system instead of room-physics
+- Main music has been reduced in volume
+- Car idle sound amplified
+- Backup lights now light when braking (even when still maintaining forward velocity)
+- Fixed one of the songs being the car ignition
+- Idle sound dynamically changes in pitch based on speed
+- Added ground friction for car
+- Added engine sputter on low fuel
+- Added fuel usage
+- Added engine sputtering on empty tank
+- Car cannot drive on an empty tank
 
-- Fixed bug where brain could not be damaged
-- Fixed some small bone-collision bugs
+- Speedometer and fuel gauge read more accurately with the dials
+- Added RPM dial
+- Added car RPMs
+- Added car gear
+- Pitch of engine blips with gear shifts
+- Car automatically shifts at red-line
+- Added idle RPM flutter
+- Car has a different resistance of friction when accelerating allowing it to still reach max speeds
+- Car has RPM resistance which enables it to struggle to get up to higher speeds
+- Sudden steer changes are smoother
+- Better engine-off sound
+- Overall smoother handling changes
+- Added startup dial loading
 
-- Fixed the initial coverage of an incendiary blast
-- Grenade now fully functional again
-- Fixed minimum condition for bones
-- Fixed damaging pixel system
+- Made the door a separate component of the car
+- Made the gas cap a separate component of the car
+- The door can open and close when individually hovered on
+- The gas cap can be opened and closed individually
+- To enter the car, the door must be opened (left click) and then the main car left clicked
+- To fill the car, the tank must be opened (left click) and then the main car left clicked (held)
+- To exit the car, simply left click
+- Changed visual hover outline and parameters
+- Car now no longer rolls after re-entering car from previously high speeds
+- Player no longer gets stuck after exiting vehicle
+- Changed color of fuel gauge ticks
 
-- Fixed conditions going into negatives
-- Bones can no longer exceed level 5 breaks when shot
-- Fixed numerous grenade bugs
-- Fixed numerous damaging pixel bugs
-- Added back fragments with fragmentation grenade
-- Added random fragment height
-- Grenades now no longer contaminate wounds with bullets
-- Explosive rounds and grenades now burn affected areas
-- Added inhibiter so stats can not exceed maximum level bleeding, open wound amount, burning, etc.
-- Fixed grenade lag
-- Limbs now display colors to show condition
-- Limbs no longer heal at 0%
-- Limbs black at 0% as early application of dismemberment/crippling
-- Fixed radiation sign sizing in-health on-hover for irradiated body parts
-- Added secret change to player model in armor-view
-- Used lower sized texture models for precise-aim for more adaptability for enemy sprites in the future
-- Added new base enemy model
-- All current enemies are part of the new Rafnheim Faction
-- Added font support for special characters
-- Added character name and faction
-- Added random name generator for enemies
-- Improved visuals for precise-aim UI
+- Car speed is now dependent on FPS, so it is proportional no matter framerate
+- Gamepad controls no longer interfere with main controls
 
-- Shifted displaced hit locations over in precise aim UI
-- Reevaluated bullet drop factor and distance before drop occurs
-- Revised visuals for 2x scope for higher peripheral visibility
-- Added peripherals to all sights to distinguish their coverage
-- Fixed bug where damaging pixel did not damage multiple organs
+- Changed inventory handling slightly so in-mouse item goes back to in-hand if left click is released (drag & drop vs pickup putdown)
+- All inventory functions have been converted to drag and drop
+- All box-colliding armor interactables now have distinct objects that allow for more dynamic use and optimization without tracking mouse
+- Slight visual size increase when items are inside inventory grid
+- Slightly changed collider for gun-rack
 
-- Reintegrated dynamic movement for all the inventory and health UI systems
-- Player no longer shifts to 0, 0 when opening any menus
-- Player can now be damaged when any UIs are open
+- Fixed coat armor-interactive pickup bug
+- Added plate carrier slot in inventory
+- Fully implemented plate carrier slot
+- Added Hacksaw Plate Carrier item
+- Fixed issue with transferring items to different hands with new drag and drop in-inventory system
+- Clothing items now appear correctly on-hover in-inventory
+- Added simple modifier allowing only certain items to go in plate carriers
+- Added NIJ-III Polyethylene Armor Plate
+- Added "(+{number})" on descriptor for armor protection for plate carrier that changes based on the plate currently in the carrier
 
-- Support for the new UI movement system integrates Journal, Map, and Statistics UIs
-- Changed item spawning command in debug to "$spawn.item #" (ex.- $spawn.item 52)
-- Added 4 unique AI sections that define their personality and behavior in combat
-- Random actions corresponding to certain keystrokes no longer occur when the debug menu is open
-- Added faction banners that display next to enemy names
-- Added difficult settings configuration file that allows players themselves to alter the gameplay
-- Ammo displaying in-hand now disabled by default
-- Fixed small loading dialogue bug
-- There's now a 1% chance getting shot in the brain will not kill you, in which case a memory will be created of the survival
-- In-hand items now no longer display over the journal UI
-- Moved room slightly
-- Ammo no longer default displays on hover
-- Can now do ammo checks on mags and boxes
-- Boxes display the exact amount of remaining ammo in an ammo check
+- Rebalanced damage for bullet impacts
+- Plate carrier protection has been fully implemented
+- Multi-layer torso protection improved drastically
+- Numerous multi-layer torso protection bugs have been solved
+- Added the Yetti plate carrier, designed for tundra performance and protection
 
-- Hand animations now play at a speed based on the game's fps to match with sound
-- Precise aim value visibility is now a difficulty option disabled by default
-- Added small descriptions to settings in the difficulty settings file for ease of use
-- Added ASCII font support for journal font
-- Bullets that do not pass through armor now have lower stopping power effects
-- Readded new damage calculation to enemies
-- New stopping power system in place for enemies
-- New armor penetration system integrated for enemies
-- Reimplemented blood explosions when the player and enemy are hit
-- Improved settings menu
-- Default in-game settings menu disabled
-- Removed the config file and moved the load buffer setting to the new settings menu
+- Added mag pouch
+- Added small mag pouch
+- Mag Pouches are plate carrier applicable
+- Frameworked magazine-holding system for mag pouches
 
-- All guns have either a dovetail, picatinny, or footprint sight rail/mount
-- All optics have unique mount preferences
-- Optics not matching the guns rail style cannot be placed
-- Added the side-mounted rail which allows dovetail weapons to have picatinny sights
-- Added ability to attach and remove rails
-- The mount style now displays on-hover on guns
-- Simplified names for optics
-- The 2x scope now only natively works on the VZ54 and VZ58
-- Optics, underbarrel, suppressor, and rails now display in-inventory on-hover
-- Optics, underbarrel, suppressor, and rails no longer display on-hover in-hand if not applicable
-- Sights and scopes can now be placed on ALL weapons as long as the corresponding rail is in place
+- Mag pouches can now be right clicked in the plate carrier to either insert or remove a magazine
+- Added orange outline to show that magazine can be put in pouch
+- Magazines have size values
+- Small magazines can fit in both pouches while medium can only fit in regular sized ones
+- Large magazines (none added yet) do not fit in either pouch
+- Added framework sprites for new armor plate types and levels
 
-- Added the crag red-dot optic with a footprint attachment style
-- Resized all the optics
-- Changed inventory screen slightly so objects no longer blend with background
-- Optics and rails can now be detached from all weapons
-- Sound now plays when equipping and removing rails
-- Added a Base-Footprint rail
-- Removed scope on VZ54 base sprite
-- Slightly changed side-mount sprite
-- Changed 2x scope sprite to show dovetail mount
-- Fixed a bug where optics not matching the gun's mount style could still be attached
-- Fixed VZ54 being base mounted not dovetail mounted
-- Fixed some bugs that would crash the game when getting shot and holding certain items
-- Added 'gun-inspection' screen openable with 'G' that shows the gun and its attachments in detail
-- Resprited laser
-- Resized laser
-- Resprited all suppressors
-- Recolored spriting on the side mount
-- Firing mode can also be changed when the mouse side button is pressed
-- Underbarrel toggle mouse keybind swapped to other side button
-- Sound now plays when equipping lasers
+- Resized plate carrier in-hand and in-inventory and in-grid sizes
+- Resized armor plate size in-hand and in-inventory
+- Added the POLY-IIIA, POLY-III+, KEV-II, KEV-IIA, KEV-III, STEEL-IV, TITAN-IV, and CERAM-IV Armor Plates
+- Added fragility to armor plates which determines their level of damage from bullet impacts
+- Fixed bug where car did not slow due to friction when neither accelerating nor decelerating
+- Improved friction mechanic
+- Improved car handling
+- Car friction based on FPS
+- Fixed crash when being shot wearing plate carrier without armor plate
+- Recolored armor plates for designation
 
-- Changed death screen slightly
-- Added conditions to attachments in gun inspection
-- Shake and shake magnitude now defined in settings
-- Firearm condition is now the average of all the part conditions and the overall cleanliness
-- Fixed some hover-item modifier bugs
-- Retitled some modifiers on-hover
-- Guns now have cleanliness that will degrade naturally
-- Guns will dirty faster if wet due to rusting
+- RPM now takes time to shift down dial instead of instantly moving to 0 on shift
+- Items with liquid content now display in-inventory with corresponding background
+- Lowered muzzle velocity of VZ54 so it actually damages
+- Dropping bullets plays a different sound
+- Bullet shell drop dynamically plays when fired
+- Bullet shell drop quieter in detection
+- Added arm stamina
+- Arm stamina now lowers when aiming
+- As arm stamina lowers, shake becomes larger
+- Lowered maximum shake from 10 to 4
+- Continued updating player guide
+- Moved around room
+- Removed lighting in gun room
+- Resprited some gun components
 
-- Added passive rusting and dirtying in-hand
+- Added chinook for later implementation
 
-- Lowered natural dirtying rate
-- Lowered natural rusting rate per level of dampness
-- Added passive dirtying and rusting while items lay on the ground
-- Guns no longer rust and dirty past 50% condition
-- Guns now dirty and rust while being transferred between clothing items and held in the mouse
-- Resized the water bottle sprite
-- Added G-D 40 Lubricant
-- Added toothbrush
-- Player can now apply G-D 40  to all attachments. components, and firearms
-- Player can brush attachments, components, and firearms
-- Brushing firearms will increase their cleanliness
-- Brushing components and attachments will increase their condition by a quarter the rate they clean firearms
-- Fixed some spriting issues with gun components
-- Resprited barrel components
-- Fixed component collisions
-- Recolored triggers
-- Added 'Tool' tab in inventory filter
-- Resized misc. items
-- Revised collisions on misc. items
-- Added multitool
-- Multitool can repair components
-
-- Fixed bug where quick-dropped mags could not be reloaded causing crash
-- Added ability to slowly unload ammo-boxes with right-click
-- Aim height now displays on top of quick stats
-- Can no longer attach rails when an optic is already on the firearm
-- Resized firearm on-hover box to fit new condition system
-- Prepped for tutorial system
-
-- Fixed armor stats not showing on-hover
-- Resized aim-height UI
-- Armor starts to lose its protection-power as its condition lowers
-- Changed the hypothermia condition image
-
-- Gas-Mask now has a filter slot, filter condition, and filter type
-- Added the CB54 Filter that can be mounted to the gas-mask
-- Renamed gas-mask to CB1.6 Gas Mask (Numbers represent first number times 10 (10) all the way to the second number times 10 (60) compatibility (CB10-CB60 filters)
-- Can screw and unscrew filters into gas mask
-- Redid some UI elements on-hover for new filter system
-- Grid size now displays on-inspection in-inventory instead of CC occupancy for legacy system (outdated)
-- Gas Mask Filter condition lowers with use
-- Changed sprite for gas mask overlay
-- Gas mask overlay now displays filter integrity
-
-- Face clothing items can now be damaged when hit (headshots damage gas mask)
-- Added fragility to all armor items so certain ones damage faster
-
-- Main body parts now damage from hits, not just damage over time
-- A torso at 0% causes death
-- Dismemberment can now only occur from overkill hits
-- Added 12 new unique songs
-- Player consciousness now no longer dependent on LOWEST condition but now TORSO condition
-- 0% condition limbs now remain red and dismembered limbs are black
-- Dismembered limbs can no longer be damaged
-- Can no longer apply items on dismembered limbs
-- Selected limbs and organ names and descriptions display again
-- All limbs and bones now have unique descriptions
-- Extended attachments corner in room to include new cleaning items
-- Added new testing room
-- Added gun racks (WIP)
-
-- Guns can now be dropped onto gunracks and automatically placed on
-- Field stripping now automatically calculates real condition with new cleanliness system
-- Only certain guns can go on racks now
-- Fixed Zbrojovka not having cleanliness (0% always)
-- Zbrojovka can now be put on racks
-
-- Added a shelf for holding smaller guns
-- Shelves can hold pistols and ammo boxes
-- Changed gun racks
-
-- Grenades can no be placed on shelves
-- Resized in-world toothbrush and GD40
-- Added ramrod
-- Can clean barrel both in and out of gun with ramrod
-
-- Fixed scope sizing in-inventory on-grid
-- Fixed sizing of ramrod in-hand
-- Minor change to Z-Rapid Suppressor Sprite
-- Baseball bat can now be put on a rack
-- Fixed multiple weapon collision masks for higher precision
-- Hands default off when no weapon is being held
-
-- Holding C when firing now controls recoil to keep it in the general vicinity of where you shot
-- Revalued recoil values for each firearm
-- Added a bar which dynamically increases and decreases depending on current sounds
-- Player walking, idle, and sprinting have unique sound levels
-- Firing, chambering, etc. guns now produces unique sound levels
-- Player now shakes with mouse when it moves from shake factors
-- Suppressors now lower the net sound value of firearms so they are less detectable
-- Fixed depth issues for applied health items
+- Chinook functionality implemented
+- Added Chinook gas tank
+- Added Chinook door
+- Revised Chinook movement
+- Added unique Chinook startup
+- Added antialiasing to settings
