@@ -1,201 +1,124 @@
-SEPSIS V1 1.5.12.31.25.1 (1.5 Update)
-Update Pushed on 31 December, 2025 
+SEPSIS V1 1.6.5.31.26.1 (Radiation & Verticality Update)
+Update Pushed on 31 May, 2026
 Bjørn - Jernbjørn Kollektiv - Team Titanium
 
 --------------------------------------------
 KEY FEATURES
 --------------------------------------------
 
-- Enhanced Enemy Thinking
-- Enemy Detection, Scouting, Searching, & Cover AI
-- Enemy Pathfinding AI
-- Plate Carriers, Chest Rigs, Armor Plates, and Utility Pouches
-- Cars and Chinook
+- New Gas Masks & Filter System
+- Toxic & Radioactive Zones
+- Hazmat Suit (C7-LA)
+- Geiger Counter (CDV700)
+- Battery System
+- New Radiation Damage
+- Improved Radiation Health Effects
+- Verticality System (Part 1)
+- Major QOL Fixes
 
 --------------------------------------------
 COMPLETE CHRONOLOGICAL CHANGELOG
 --------------------------------------------
 
-- Added new enemy trait "Inquisition" which determines what they do when detecting nearby noise
-- Added unique enemy FOV, Visual Depth, Visual Acuity, Listening Range, & Listening Depth which affect player detection
-- Doubled the height of the sound level bar
-- Enemies look in the direction of any sound they detect
-- Dropping and throwing items now produces a sound
-
-- Improved muzzle flash lighting
-- Added atmospheric default lighting to the gun room
-- Added FOV detection to enemies
-- Added line-of-sight obstruction for enemies so they cannot see through walls
-- Enemies now point in the direction of the detected player
-- Improved debug FOV visuals
-
-- Enemies now delay being alarmed by visual detection based on visual acuity stat
-- Enemy acuity delay quickens if the player is closer
-- Added visual acuity representation for enemies in debug
-- Added "team-play" trait to enemies which determines how well they work with their teammates
-- Enemies no longer detect when incapacitated
-- Added dynamic pathfinding to enemies
-- Enemies automatically engage detected player
-- Rebalanced sound and noise detection
-
-- Rebalanced sprinting heartrate increase per second
-- Added top speed and engage distance to enemies
-- Added enemy scouting
-- Added enemy searching
-
-- Started setup for enemy cover system
-
-- All walls have dedicated cover locations
-- Added primitive cover seeking function for enemies
-
-- Enemies now take cover when shot at
-- Enemies move between cover if their spot is discovered
-- Enemies pathfind to the most ideal cover location when necessary
-- Allowed bullet passthrough across cover overlays (bug)
-
-- Enemies no longer spin when incapacitated
-- Enemies hit with grenades can no longer crash the game
-- Enemy damage from grenades significantly reduced temporarily
-- Fixed issue where enemies scouting for player would loop through prior path
-- All ammo now have individual object-penetration (separate from flesh penetration) values
-- Reduced grid-size for both the VZ-58 and VZ-54 in-inventory by 1 row from the bottom
-- Player now gets adrenaline rush from seeing ACTIVE enemies, not test dummies
-- Fixed bug where liquids could be transferred and exceed carrying capacity
-- Added visual representation of pills in water bottle
-- Added gas can
-- Added gasoline liquid
-- Player dies if they drink gasoline
-- Can apply gasoline to medical items
-- Added flammability to wounds
-- Applying gasoline to open wounds increases flammability
-- Areas with high flammability can ignite when shot
-- Ignited body parts increase treatment level but cause burning based on flammability
-- Added cauterization function
-
-- Fixed bug which did not allow player to drink gasoline
-- Added car object & sprite
-- Pouring sound actually stops when done pouring
-- Added gas fill sound
-- Added ability to open gas tank of car
-- Added ability to fuel car
-- Player can enter car
-- Player can accelerate, brake, steer, drift, and reverse car
-- Added car lighting
-- Added car ignition
-
-- More accurate car steering based on straightening out wheels after turn
-- Just headlights flicker on during ignition
-- Car reverses accurately based on direction of wheels
-- Temporarily disabled physics until resolving bullet velocity issue
-
-- Added halogen flicker sound
-- Fixed physics issue where bullets were affect by room-physics
-- Car now runs off of traditional velocity system instead of room-physics
-- Main music has been reduced in volume
-- Car idle sound amplified
-- Backup lights now light when braking (even when still maintaining forward velocity)
-- Fixed one of the songs being the car ignition
-- Idle sound dynamically changes in pitch based on speed
-- Added ground friction for car
-- Added engine sputter on low fuel
-- Added fuel usage
-- Added engine sputtering on empty tank
-- Car cannot drive on an empty tank
-
-- Speedometer and fuel gauge read more accurately with the dials
-- Added RPM dial
-- Added car RPMs
-- Added car gear
-- Pitch of engine blips with gear shifts
-- Car automatically shifts at red-line
-- Added idle RPM flutter
-- Car has a different resistance of friction when accelerating allowing it to still reach max speeds
-- Car has RPM resistance which enables it to struggle to get up to higher speeds
-- Sudden steer changes are smoother
-- Better engine-off sound
-- Overall smoother handling changes
-- Added startup dial loading
-
-- Made the door a separate component of the car
-- Made the gas cap a separate component of the car
-- The door can open and close when individually hovered on
-- The gas cap can be opened and closed individually
-- To enter the car, the door must be opened (left click) and then the main car left clicked
-- To fill the car, the tank must be opened (left click) and then the main car left clicked (held)
-- To exit the car, simply left click
-- Changed visual hover outline and parameters
-- Car now no longer rolls after re-entering car from previously high speeds
-- Player no longer gets stuck after exiting vehicle
-- Changed color of fuel gauge ticks
-
-- Car speed is now dependent on FPS, so it is proportional no matter framerate
-- Gamepad controls no longer interfere with main controls
-
-- Changed inventory handling slightly so in-mouse item goes back to in-hand if left click is released (drag & drop vs pickup putdown)
-- All inventory functions have been converted to drag and drop
-- All box-colliding armor interactables now have distinct objects that allow for more dynamic use and optimization without tracking mouse
-- Slight visual size increase when items are inside inventory grid
-- Slightly changed collider for gun-rack
-
-- Fixed coat armor-interactive pickup bug
-- Added plate carrier slot in inventory
-- Fully implemented plate carrier slot
-- Added Hacksaw Plate Carrier item
-- Fixed issue with transferring items to different hands with new drag and drop in-inventory system
-- Clothing items now appear correctly on-hover in-inventory
-- Added simple modifier allowing only certain items to go in plate carriers
-- Added NIJ-III Polyethylene Armor Plate
-- Added "(+{number})" on descriptor for armor protection for plate carrier that changes based on the plate currently in the carrier
-
-- Rebalanced damage for bullet impacts
-- Plate carrier protection has been fully implemented
-- Multi-layer torso protection improved drastically
-- Numerous multi-layer torso protection bugs have been solved
-- Added the Yetti plate carrier, designed for tundra performance and protection
-
-- Added mag pouch
-- Added small mag pouch
-- Mag Pouches are plate carrier applicable
-- Frameworked magazine-holding system for mag pouches
-
-- Mag pouches can now be right clicked in the plate carrier to either insert or remove a magazine
-- Added orange outline to show that magazine can be put in pouch
-- Magazines have size values
-- Small magazines can fit in both pouches while medium can only fit in regular sized ones
-- Large magazines (none added yet) do not fit in either pouch
-- Added framework sprites for new armor plate types and levels
-
-- Resized plate carrier in-hand and in-inventory and in-grid sizes
-- Resized armor plate size in-hand and in-inventory
-- Added the POLY-IIIA, POLY-III+, KEV-II, KEV-IIA, KEV-III, STEEL-IV, TITAN-IV, and CERAM-IV Armor Plates
-- Added fragility to armor plates which determines their level of damage from bullet impacts
-- Fixed bug where car did not slow due to friction when neither accelerating nor decelerating
-- Improved friction mechanic
-- Improved car handling
-- Car friction based on FPS
-- Fixed crash when being shot wearing plate carrier without armor plate
-- Recolored armor plates for designation
-
-- RPM now takes time to shift down dial instead of instantly moving to 0 on shift
-- Items with liquid content now display in-inventory with corresponding background
-- Lowered muzzle velocity of VZ54 so it actually damages
-- Dropping bullets plays a different sound
-- Bullet shell drop dynamically plays when fired
-- Bullet shell drop quieter in detection
-- Added arm stamina
-- Arm stamina now lowers when aiming
-- As arm stamina lowers, shake becomes larger
-- Lowered maximum shake from 10 to 4
-- Continued updating player guide
-- Moved around room
-- Removed lighting in gun room
-- Resprited some gun components
-
-- Added chinook for later implementation
-
-- Chinook functionality implemented
-- Added Chinook gas tank
-- Added Chinook door
-- Revised Chinook movement
-- Added unique Chinook startup
-- Added antialiasing to settings
+- Fixed bug where unscrewed gas mask filters would be broken
+- Added dynamic gas mask filter sizing system, where certain gas masks cannot take certain sized filters of the same type
+- Changed filters to be generic type, not size - size is now purely modifier based
+- Added the DS-Series Filter and the DS1.4 Gas Mask
+- Increased size of CB1.6 in-inventory from 2x2 to 3x3 and  CB-Filters from 1x1 to 2x2
+- Added oxygen tank which can be equipped on shoulder
+- Added toxicity zones
+- Added player toxicity which affects the condition of the lungs
+- Toxicity can be limited with respirators & stopped with oxygen tanks
+- Filter Level directly cooresponds to protection from toxins
+- Made indicator of remaining filter condition separate from main mask overlay so it stands out more
+- Added O2 level on mask indicator
+- Major inventory QOL fixes when hovering on items, equipping armor, etc.
+- Added standalone O2 level indicator
+- Gas mask indicator text now matches color of glow
+- Resprited the mouse slightly
+- Gas Masks are now dynamically sized, meaning the same item is used for different sized masks
+- Fixed O2 tank leaking when wearing mask
+- O2 leaks when not wearing mask with it
+- Added O2 levels in toxic zones
+- Player O2 has a tendency to lower to zone O2 with and without mask
+- Players using tank supplied O2 are unaffected by zone O2 drop
+- O2 tank now lowers player oxygen if applied and empty
+- Added C7-LA Hazmat Suit item (no-purpose yet, wearable)
+- Added dynamic in-world sizing for folded clothing items
+- Slightly modified some clothing sprites to accommodate the hazmat
+- Reodered clothing drawing to accomodate for hazmat
+- Added radiation protection value to all armor pieces
+- Added radiation total and radiation protection in-inventory and on-hover of armor
+- Significantly optimized the displaying of armor information on-hover
+- Added maximums to toxic zones
+- Added radiation zones
+- Added geiger UI and clicks
+- Moved oxygen UI
+- Added scale to geiger counter which can be shifted with NUMPAD (1-3) to change decimal that radiation is measured by
+- Started spriting the geiger counter item
+- Geiger clicks can now sound even when menus are open
+- Added CDV700 Geiger Counter item
+- Geiger level is now changed directly with the geiger counter with left click
+- Geiger UI is now only visible if a counter is in your hands
+- Geiger clicks now only sound if counter is in hands or inventory
+- Added NOK Gas Mask
+- Fixed crash from gas mask removal
+- Fixed crash from bleeding particles
+- All parts of geiger (level max, measurement max, & level jump) are dynamic
+- CDV700 can now be turned on and off
+- Geigers only measure, display, and are active when on
+- Changed number of geiger clicks per second
+- Added the D-Cell 1.5V Battery
+- Added the battery insertion system
+- CDV700 now takes 4 D-Cells
+- Fixed bug potentially leading to duplication glitch in the future
+- CDV700 can now no longer function without batteries
+- CDV700 can not turn on without batteries
+- Added battery insertion and removal system
+- Added battery averaging system
+- Added battery consumption from use
+- Added idle battery consumption even when item is sitting unused
+- Fixed a variety of health conditions
+- Added 3 types of radiation zones (alpha, beta, and gamma)]
+- Changed the A, B, and G ARS conditions to BM, GI, and CV/CNS
+- Changed the ARS condition effects
+- Each body part now has inherent vulnerability to radiation damage
+- Each body part can now be affected individually by radiation damage
+- Toxicity zones now have types (General, Alpha, Beta, Mold)
+- Breathing alpha/beta air unprotected can lead to alpha/beta particle contamination in lungs
+- Fixed the pain suppression option not appearing
+- Added a sharp exhale body function, allowing player to clear lungs of small contaminants
+- Began initialization of verticality system
+- Fixed issue making gun racks, shelves, and their items persist between layers
+- Fixed bullet trails remaining in open areas (not colliding with walls)
+- Fixed issue which made guns and items held by racks/shelves have an error on pickup\
+- Started system for adapting spawn array after room creation
+- Layers now save between switches
+- Items can now be saved across multiple layers
+- Layers now remain consistent with items placed between either
+- Layer assignment object now automatically places after every game-start
+- Added radiation emitters, changeable in type, ring count, distance per ring, and change in power per ring
+- Added stairs which dynamically change transitions
+- Ground objects now transfer between layer switches
+- Enemies now change between levels and save location
+- Fixed bug where a destroyed enemy object would crash their audio detection objects
+- Blood effects now transfer between layers
+- Started transformation of some enemy attributes to modifiers for in-room saving
+- Improved efficiency of layer changing
+- Fixed bug where enemies hovered on would cause a crash when changing layers
+- Fixed some object attributes from sharing the modifier effects as if they were an item
+- Finished making enemies fully modifier-compatible and sufficient for multi-layer functionality
+- Made toxic zones and radiation zones as well as radiation emitters multi-layer compatible
+- Layer assignment allows for optimization for more layer additions in the future
+- Fixed crash when hovering on enemies and then changing layers
+- Fixed crash from dropping items on highest layer
+- Layer assignment now happens dynamically for items placed in future layers
+- Optimized layer-switching performance
+- Enemies can now pathfind differently depending on the obstacles in different layers
+- Fixed blood bags not being able to transfer between layers and having misc. callouts
+- Moved 2nd layer to be another room
+- Added 3rd testing layer
+- Slightly improved performance of geiger counter
+- Reduced lag on initial bullet-wounding of enemies
+- Removed manual layer shifting with shift and scroll
+- Frameworked persistent layer objects
