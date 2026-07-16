@@ -1,124 +1,160 @@
-SEPSIS V1 1.6.5.31.26.1 (Radiation & Verticality Update)
-Update Pushed on 31 May, 2026
+SEPSIS V 0.6.7.16.26.1 (1.6) - Verticality Part 2 & Vehicle Update
+Update Pushed on 16 July, 2026
 Bjørn - Jernbjørn Kollektiv - Team Titanium
 
 --------------------------------------------
 KEY FEATURES
 --------------------------------------------
-
-- New Gas Masks & Filter System
-- Toxic & Radioactive Zones
-- Hazmat Suit (C7-LA)
-- Geiger Counter (CDV700)
-- Battery System
-- New Radiation Damage
-- Improved Radiation Health Effects
-- Verticality System (Part 1)
-- Major QOL Fixes
-
+- Crouching
+- Blind Firing
+- Improved Vehicle Operation
+- Cover System
+- New Vehicle: Motorcycle
+- Vehicle Maintenance
+- Aerial Layer Movement (Chinook)
+- Optimizations & QOL
+- Bug Fixes
 --------------------------------------------
 COMPLETE CHRONOLOGICAL CHANGELOG
 --------------------------------------------
-
-- Fixed bug where unscrewed gas mask filters would be broken
-- Added dynamic gas mask filter sizing system, where certain gas masks cannot take certain sized filters of the same type
-- Changed filters to be generic type, not size - size is now purely modifier based
-- Added the DS-Series Filter and the DS1.4 Gas Mask
-- Increased size of CB1.6 in-inventory from 2x2 to 3x3 and  CB-Filters from 1x1 to 2x2
-- Added oxygen tank which can be equipped on shoulder
-- Added toxicity zones
-- Added player toxicity which affects the condition of the lungs
-- Toxicity can be limited with respirators & stopped with oxygen tanks
-- Filter Level directly cooresponds to protection from toxins
-- Made indicator of remaining filter condition separate from main mask overlay so it stands out more
-- Added O2 level on mask indicator
-- Major inventory QOL fixes when hovering on items, equipping armor, etc.
-- Added standalone O2 level indicator
-- Gas mask indicator text now matches color of glow
-- Resprited the mouse slightly
-- Gas Masks are now dynamically sized, meaning the same item is used for different sized masks
-- Fixed O2 tank leaking when wearing mask
-- O2 leaks when not wearing mask with it
-- Added O2 levels in toxic zones
-- Player O2 has a tendency to lower to zone O2 with and without mask
-- Players using tank supplied O2 are unaffected by zone O2 drop
-- O2 tank now lowers player oxygen if applied and empty
-- Added C7-LA Hazmat Suit item (no-purpose yet, wearable)
-- Added dynamic in-world sizing for folded clothing items
-- Slightly modified some clothing sprites to accommodate the hazmat
-- Reodered clothing drawing to accomodate for hazmat
-- Added radiation protection value to all armor pieces
-- Added radiation total and radiation protection in-inventory and on-hover of armor
-- Significantly optimized the displaying of armor information on-hover
-- Added maximums to toxic zones
-- Added radiation zones
-- Added geiger UI and clicks
-- Moved oxygen UI
-- Added scale to geiger counter which can be shifted with NUMPAD (1-3) to change decimal that radiation is measured by
-- Started spriting the geiger counter item
-- Geiger clicks can now sound even when menus are open
-- Added CDV700 Geiger Counter item
-- Geiger level is now changed directly with the geiger counter with left click
-- Geiger UI is now only visible if a counter is in your hands
-- Geiger clicks now only sound if counter is in hands or inventory
-- Added NOK Gas Mask
-- Fixed crash from gas mask removal
-- Fixed crash from bleeding particles
-- All parts of geiger (level max, measurement max, & level jump) are dynamic
-- CDV700 can now be turned on and off
-- Geigers only measure, display, and are active when on
-- Changed number of geiger clicks per second
-- Added the D-Cell 1.5V Battery
-- Added the battery insertion system
-- CDV700 now takes 4 D-Cells
-- Fixed bug potentially leading to duplication glitch in the future
-- CDV700 can now no longer function without batteries
-- CDV700 can not turn on without batteries
-- Added battery insertion and removal system
-- Added battery averaging system
-- Added battery consumption from use
-- Added idle battery consumption even when item is sitting unused
-- Fixed a variety of health conditions
-- Added 3 types of radiation zones (alpha, beta, and gamma)]
-- Changed the A, B, and G ARS conditions to BM, GI, and CV/CNS
-- Changed the ARS condition effects
-- Each body part now has inherent vulnerability to radiation damage
-- Each body part can now be affected individually by radiation damage
-- Toxicity zones now have types (General, Alpha, Beta, Mold)
-- Breathing alpha/beta air unprotected can lead to alpha/beta particle contamination in lungs
-- Fixed the pain suppression option not appearing
-- Added a sharp exhale body function, allowing player to clear lungs of small contaminants
-- Began initialization of verticality system
-- Fixed issue making gun racks, shelves, and their items persist between layers
-- Fixed bullet trails remaining in open areas (not colliding with walls)
-- Fixed issue which made guns and items held by racks/shelves have an error on pickup\
-- Started system for adapting spawn array after room creation
-- Layers now save between switches
-- Items can now be saved across multiple layers
-- Layers now remain consistent with items placed between either
-- Layer assignment object now automatically places after every game-start
-- Added radiation emitters, changeable in type, ring count, distance per ring, and change in power per ring
-- Added stairs which dynamically change transitions
-- Ground objects now transfer between layer switches
-- Enemies now change between levels and save location
-- Fixed bug where a destroyed enemy object would crash their audio detection objects
-- Blood effects now transfer between layers
-- Started transformation of some enemy attributes to modifiers for in-room saving
-- Improved efficiency of layer changing
-- Fixed bug where enemies hovered on would cause a crash when changing layers
-- Fixed some object attributes from sharing the modifier effects as if they were an item
-- Finished making enemies fully modifier-compatible and sufficient for multi-layer functionality
-- Made toxic zones and radiation zones as well as radiation emitters multi-layer compatible
-- Layer assignment allows for optimization for more layer additions in the future
-- Fixed crash when hovering on enemies and then changing layers
-- Fixed crash from dropping items on highest layer
-- Layer assignment now happens dynamically for items placed in future layers
-- Optimized layer-switching performance
-- Enemies can now pathfind differently depending on the obstacles in different layers
-- Fixed blood bags not being able to transfer between layers and having misc. callouts
-- Moved 2nd layer to be another room
-- Added 3rd testing layer
-- Slightly improved performance of geiger counter
-- Reduced lag on initial bullet-wounding of enemies
-- Removed manual layer shifting with shift and scroll
-- Frameworked persistent layer objects
+- Fixed dynamic limb irradiation from no longer occurring due to variable renaming
+- Removed inactive test dummies
+- Changed debug open key to INS
+- Drastically improved lag from the initial shooting of an enemy
+- Added player crouch level (1-4)
+- Crouch level can be adjusted with Control
+- Added player crouch level UI
+- Player speed is reduced for each level of crouching
+- Added cover values to crate (2/4 cover)
+- Once crouch is lower than an objects cover, it casts a shadow
+- Fixed enemy searching for player between all shadow casting objects
+- Enemies can now no longer detect the player when behind cover
+- Fixed enemy pathfinding, searching, etc. bugs caused by layer system
+- Fixed firearms not scaling sound level properly
+- Bullet collisions now match with colliders dependent on player crouch
+- Improved bullet-to-wall collisions
+- Bullet-to-wall sound only plays if the collision is applicable to the crouch level
+- Changed "Shoot self" key to Control and Shift Combination (+Left Click)
+- To change crouch, control must be held while the scroll wheel adjusts crouch level
+- Enemy detection of player now occurs slower when the player is crouched
+- Fixed enemy path grid-sets being combined between layers instead of resetting upon each layer change
+- Added blind firing with "V" which allows shooting past objects without being able to see
+- Improved blood splatter effect
+- Added puddle objects that spawn when enemies are killed
+- When puddle objects are stepped on, they enable bloody footprints for a certain number of steps
+- Fixed player blood type not displaying actual title on hover
+- A white outline now appears on the UI of the variable that changes when moving the scroll wheel (when holding control, the outline appears on the crouch UI, but when not, it appears on the aim height UI)
+- Detectable player walking/running noise drops with each level of crouch
+- Iodine pills now lower global radiation stat that could influence the continued irradiation of body parts even after remedy
+- Vehicles now no longer persist between layers
+- Vehicle lights now no longer persist between layers
+- Improved backup light on car
+- Added vehicle wall collisions
+- Added vehicle cover (3/4 for car)
+- Made vehicle system synonymous for optimization and ease of development
+- Added blood tire tracking
+- Vehicles can collide with one another
+- Hitting enemies with vehicles now lowers their conciousness = to your speed
+- Hitting enemies with vehicles can kill them and spawn blood in the direction of the hit
+- Resized the car sprite to be the accurate size when rotated for shadow projection
+- Vehicles now contribute to sound level and are detectable by enemies
+- Fixed the chinook functionality, lighting, and rotors
+- Drastically improved vehicle collisions
+- Improved chinook lighting
+- Chinook displays Altimeter
+- Chinook altitude can be adjusted with up and down arrow keys
+- Every 10 feet in travelled altitude changes the layer, allowing players to fly between layers with the chinook
+- Resprited chinook and improved shadows
+- Added the attitude indicator to show banking on the chinook (steer)
+- Indicators for vehicles now scale based on the window size
+- Lowered speed of altitude change slightly
+- Fixed some errors when changing layers by altitude
+- Fixed fuel gauge sprite
+- Fixed altitude changing layers off by 10 feet when descending
+- Layer changes now line up exactly per 10 feet of altitude
+- Attitude indicator now scales visual movements to the speed of the chinook
+- Fixed crate not casting shadow at correct crouch levels
+- Fixed layering issue with sound and crouch UI that caused the two to be improperly stacked and impair visibility to quick-stats on-hover
+- Added blind fire key as developer adjustable
+- Added blind fire icon that displays in crouch UI with outline when blind fire key is held (V)
+- Slightly recolored parts of the vehicle dial UI involving 7-segment displays
+- Added reading on the RPM Dial that shows the current gear (R if gear is negative and car is reversing)
+- Fixed vehicles starting in first gear before even moving
+- In-hand item-controls now no longer display while in vehicles
+- Vehicle control UI added
+- Vehicle dial UI shifted above vehicle control UI
+- Vehicle dial UI now displays vertically aligned against the right-side of window
+- Moved some files
+- Added dependencies for trying object permanency between layers
+- Continued persistence framework
+- Fully implemented object permanency between layers
+- Object permanency now allows tall objects that exceed the 10 foot distance between layers to remain until its height limit has been reached
+- Objects that persist between layers can now display different frames depending on the layer of persistence
+- Added tree object which persists between 3 layers
+- Added dynamic overlay system for objects that are on the same level as the player but overhang (tree shrub)
+- Improved altitude change stability by implementing else-if conditionals to chinook functions
+- Aerial vehicles can no longer fly between layers where a roof or a floor is present
+- A message will appear when flying between obstacle-layers is attempted
+- Ground objects now have modifiers that describe whether it is negatively-passible (can fly down through it) and positively-passable (can fly up through it)
+- Enemies will no longer bleed simply by touching an unmoving vehicle
+- A red gas indicator now appears on the gas gauge when a tank is only 10% filled
+- Tank level of vehicles now stores between layers
+- Changed chinook fuel tank size from 12 gallons to 1050 gallons (~4 mil. mL for fluid system)
+- Added overall engine condition modifier
+- Changed speedometer to also have a check engine light
+- Check engine light displays when engine condition is below 50%
+- Fixed additional protection from armor plates not displaying in armor UI
+- Items not related to batteries now no longer display a percentage in-inventory on-hover
+- Removed layer changing testing controls (developer)
+- Vehicle overall condition can be lowered by colliding with things
+- Damage to vehicles increase with speed
+- Player stamina now no longer goes down when holding shift while in a vehicle
+- Vehicles will no longer ignite once under 50% condition
+- Added an intermediate zone for all vehicle ignition (accessory) where the indicators light but nothing starts and the vehicle cannot drive
+- Resprited key
+- Changed key inventory grid size to 2x1 instead of 1x1
+- Key objects now have a modifier determining its ID, allowing it to match up with other corresponding objects
+- Vehicles now require matching keys to start
+- Vehicles consume keys once ignition state passes 0 (accessory turned on)
+- Vehicle keys are returned once ignition returns to 0 state (off)
+- Added various dialogue notifications that display upon key attempts
+- Added system for keys to dynamically change image based on type
+- Added driving states to vehicles (P, D, R, N) changeable with 1, 2, 3, and 4 respectively
+- Changed boxes describing controls for vehicles
+- The RPM dial now displays letter/numbers corresponding to the current drive state
+- Fixed crash when initially entering Chinook caused by new drive states
+- Fixed crash when removing empty plate carrier
+- Check engine indicator now shows prior to car breaking down as warning
+- Added motorcycle vehicle
+- Engine pitch change now happens twice as fast
+- Engine pitch change dynamic between vehicles
+- Added manual gear changing on motorcycles
+- Without manually changing gears on a manual transmission vehicle, it will not be able to exceed a certain speed
+- In a manual, the shift key acts as a clutch, meaning W no longer accelerates the vehicle while it is being pressed, so you have to "blip" it to shift gears
+- Fixed bug that allowed any item to be used as a key to start any vehicle due to its index being 0
+- Vehicle engine, steering, drive train, and gas pump can independently be damage, causing changes in speed, turning, and gas efficiency
+- Aim height can no longer be changed while in a vehicle
+- Display of drive states is now dynamic in control descriptions
+- Fixed bug that locked the alpha of any item not transcending layers
+- Fixed bug that made it so enemies remained visible even behind walls due to alpha locking
+- Fixed bug where the key object could be infinitely duplicated
+- Fixed keys being lost when the vehicle broke down
+- Keys now spawn in the player's hands once vehicle breaks down, and on the ground if their hands are full
+- Significantly reduced lag due to consistent triangle-collision check from enemies
+- Added JP-8 Jet Fuel liquid
+- Added fuel compatibility system which allows only certain vehicles to take certain fuels
+- The car and motorcycle now take gasoline while the Chinook takes JP-8 Jet Fuel
+- Added dialogue that prompts when gas can is either empty or has the incorrect fuel
+- Precise-aim hovering now checks if shadow casters are on the same crouch level
+- Added lighting delay setting to settings.ini
+- Increasing lighting delay significantly boosts performance but can increase jittering of light
+- Moved room for new update initializing
+- Improved vehicle sticking during turns
+- Car now has gas again
+- Improved turning collisions and vehicle sticking
+- Temporarily fixed layering issues with vehicles
+- Renamed for update version
+- Fixed overlapping room tiles
+- Made zones visible again for testers
+- Fixed tiling of crate barrier
+- Moved Chinook to outside of main rooms for more movement freedom
