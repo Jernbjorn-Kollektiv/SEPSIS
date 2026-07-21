@@ -21,16 +21,13 @@ jobs:
             --arg description "$RELEASE_BODY" \
             --arg url "$RELEASE_URL" \
             '{
-              content: ("🚀 A new SEPSIS update has been released!\n\n[View Update](" + $url + ")"),
+              content: "🚀 A new SEPSIS update has been released!",
               embeds: [
                 {
                   title: $title,
                   url: $url,
                   description: $description,
                   color: 5814783,
-                  footer: {
-                    text: "SEPSIS Update"
-                  }
                 }
               ]
             }' > payload.json
