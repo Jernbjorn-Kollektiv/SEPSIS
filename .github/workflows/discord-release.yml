@@ -21,6 +21,7 @@ jobs:
             --arg description "$RELEASE_BODY" \
             --arg url "$RELEASE_URL" \
             '{
+              content: ("🚀 A new SEPSIS update has been released!\n\n[View Update](" + $url + ")"),
               embeds: [
                 {
                   title: $title,
