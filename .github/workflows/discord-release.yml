@@ -9,13 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send Discord notification
+      - name: Send release to Discord
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          RELEASE_BODY: ${{ github.event.release.body }}
         run: |
           curl -H "Content-Type: application/json" \
-          -d "$(jq -n \
-          --arg content "🚀 **${{ github.event.release.name }}**\n\n${RELEASE_BODY}\n\n🔗 ${{ github.event.release.html_url }}" \
-          '{content: $content}')" \
+          -d "$(cat <<EOF
+          {
+            "embeds": [
+              {
+                "title": "${{ github.event.release.name }}",
+                "url": "${{ github.event.release.html_url }}",
+                "description": "${{ github.event.release.body }}",
+                "color": 5814783,
+                "footer": {
+                  "text": "SEPSIS Update"
+                },
+                "timestamp": "${{ github.event.release.published_at }}"
+              }
+            ]
+          }
+          EOF
+          )" \
           "$DISCORD_WEBHOOK"
