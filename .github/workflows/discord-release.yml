@@ -12,7 +12,10 @@ jobs:
       - name: Send Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          RELEASE_BODY: ${{ github.event.release.body }}
         run: |
           curl -H "Content-Type: application/json" \
-          -d "{\"content\":\"🚀 New SEPSIS release published!\\n${{ github.event.release.name }}\\n${{ github.event.release.html_url }}\"}" \
-          $DISCORD_WEBHOOK
+          -d "$(jq -n \
+          --arg content "🚀 **${{ github.event.release.name }}**\n\n${RELEASE_BODY}\n\n🔗 ${{ github.event.release.html_url }}" \
+          '{content: $content}')" \
+          "$DISCORD_WEBHOOK"
