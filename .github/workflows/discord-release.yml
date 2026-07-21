@@ -12,23 +12,29 @@ jobs:
       - name: Send release to Discord
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+          RELEASE_URL: ${{ github.event.release.html_url }}
         run: |
-          curl -H "Content-Type: application/json" \
-          -d "$(cat <<EOF
-          {
-            "embeds": [
-              {
-                "title": "${{ github.event.release.name }}",
-                "url": "${{ github.event.release.html_url }}",
-                "description": "${{ github.event.release.body }}",
-                "color": 5814783,
-                "footer": {
-                  "text": "SEPSIS Update"
-                },
-                "timestamp": "${{ github.event.release.published_at }}"
-              }
-            ]
-          }
-          EOF
-          )" \
-          "$DISCORD_WEBHOOK"
+          jq -n \
+            --arg title "$RELEASE_NAME" \
+            --arg description "$RELEASE_BODY" \
+            --arg url "$RELEASE_URL" \
+            '{
+              embeds: [
+                {
+                  title: $title,
+                  url: $url,
+                  description: $description,
+                  color: 5814783,
+                  footer: {
+                    text: "SEPSIS Update"
+                  }
+                }
+              ]
+            }' > payload.json
+
+          curl \
+            -H "Content-Type: application/json" \
+            -d @payload.json \
+            "$DISCORD_WEBHOOK"
