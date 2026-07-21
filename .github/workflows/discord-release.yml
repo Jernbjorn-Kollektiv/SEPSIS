@@ -21,7 +21,10 @@ jobs:
             --arg description "$RELEASE_BODY" \
             --arg url "$RELEASE_URL" \
             '{
-              content: "🚀 A new SEPSIS update has been released!",
+              content: "<@1315386445564739604> 🚀 A new SEPSIS update has been released!",
+              allowed_mentions: {
+              roles: ["1315386445564739604"]
+            },
               embeds: [
                 {
                   title: $title,
