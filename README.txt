@@ -1,14 +1,166 @@
-SEPSIS V 0.6.7.20.26.1 (0.6.7.20) - Hotfix 1
-Update Pushed on 20 July, 2026
+SEPSIS V 0.6.9.4.26.1 (0.6.9) - Weather Update
+Update Pushed on 4 September, 2026
 Bjørn - Jernbjørn Kollektiv - Team Titanium
 
 --------------------------------------------
-BUG FIXES
+KEY FEATURES
 --------------------------------------------
-- Fixed minimize screen crash
-- Fixed ejected magazines not producing a dexterity value
-- Fixed some errors with the self-dummy not corresponding to the new enemy modifier system, yielding an incorrect image on-hover and no crosshairs in precise-aim
-- Fixed bullets not hitting walls staying forever
-- Fixed crash when trying to screw filter into an empty hand
-- Fixed bug that allowed bleed amount in a single limb to exceed the 5 level limit between frames, causing a crash when bleeding out
-- Pressing F1 opens a dialogue that pulls controls data from the controls spreadsheet
+- Dynamic Temperature
+- Weather & Seasons
+- Advanced Lighting
+- Environmental Exposure
+- Fire & Dynamic Rain
+- Significant Optimizations & Bug Fixes
+--------------------------------------------
+COMPLETE CHRONOLOGICAL CHANGELOG
+--------------------------------------------
+- Expanded size of vicinity-view object
+- Enemies outside of vicinity-view auto-hide just as they would behind walls
+- Fixed some walls stretching improperly
+- Added roof cover which determines how light-permeable the roof above is
+- Added sun level which determines the level of sun out (day vs. night)
+- Added effective sun level which calculates how much sun is exposed and visible in any given area
+- Shadow intensity now changes based on effective sun level
+- Added window lighting which displays the ambient outdoor lighting while indoors
+- Light fixtures now save between in-game layers
+- Added glow to bullets
+- Dimmed player light
+- Improved performance of wall-collision-line checks for enemies
+- Added wall-collision-line and vicinity checks for all items so they are only visible with direct line of sight
+- Vicinity LOS fading now a dynamic function applicable to anything as a script
+- Enemies and items now correctly visible in vehicle LOS
+- Fixed pellets not equating to extend-speed once extension has reached maximum length
+- Added realtime data pulling for current time, month, etc.
+- Added dynamic season calculation
+- Added dynamic sunrise and sunset calculation, which determines light level outside
+- Body temp changes 1/10 the rate at which it used to
+- Added dynamic outdoor temperature calculation based on season and time of day
+- Recolored temperature quick-stat UI
+- Changed scaling of temperature quick-stat UI
+- Added red indicator to temperature quick-stat UI showing overheating temperature
+- Added temperature lerping based on weather you are indoors or exposed to direct sunlight
+- Added indoor temperatures based on ground objects
+- Added heat sources and heat emitters
+- Ambient temperature is based on collision with heat sources
+- Ambient temperature now recalculates every frame
+- Reduced base heat emitter power distribution
+- Fixed window minimize crash
+- Fixed fever condition killing player by exponentially heating them to death
+- Added campfire which is a heat and light emitter
+- Improved fire animation to be cleaner
+- Merged hotfix changes
+- Reinstated pellet line-lights
+- Added body-part cover script which checks if any given part of the body is covered in clothing
+- Added self-dummy description to player mirror dummy
+- Added sunburn system which produces burns when the player is in the sun too long, scaled by effective exposure
+- Added hot particle system, where body parts with open wounds that are uncovered can be  contaminated with hot particles and irradiated in alpha/beta toxic zones
+- Fixed grenade explosion shake remaining indefinitely after detonation
+- Fixed grenades not damaging enemies
+- Only visible items can be picked up
+- Clamped effective sun when indexing for UV index to prevent array overflow and crash
+- Significant optimization efforts have more than doubled performance
+- Player superior depth checks are array based allowing for multiple draw-over objects
+- Added vertically parallaxing ceiling objects
+- Added ceiling lights
+- Added ceiling lights
+- Added dynamic terrain patches that change state based on tread durability, allowing for erosion from player, events, and vehicles
+- Player hands now draw under vertical draws
+- Fixed crash caused by draw-over array
+- Fixed crash caused on player death
+- Fixed bug which caused all non-bone health statuses to be invisible in-health on-hover
+- Optimized health tangibles slightly more
+- Added lots more variability to surface erosion
+- Significantly improved terrain erosion sequence
+- Significantly improved terrain visuals and coloring
+- Allowed for developer disabling of weathered tiling in-engine
+- Fixed crash resulting from player exiting world bounds
+- Startup tiling now occurs after short loadup to prevent heavy frontend load times
+- Changed layout of tower outside of main room
+- Added dynamic weather surface tiling
+- Added surface snowing event
+- Added a no weather event
+- Shooting above an enemy's head no longer causes damage
+- Certain weather events are now only probable within certain seasons
+- Added caution tape around hazards
+- Added patch addition surface so that additional surface changes can be added and baked in to increase frames
+- Radiation emitters now have a SEEME attribute that carries to radiation ring spawns so they are visible if all other radiation zones and emitters are visible
+- Added dynamic ground object surfaces that bake conditional tiles into them
+- Added new cement tiling for main ground
+- Added white noise overlay that intensifies as player irradiates
+- Resprited walls
+- Fixed layer issue causing cement surface to draw under grass in different layers
+- Lights disappear when out of view range to optimize casting
+- Significantly optimized the vicinity-fade function for items
+- Optimized cover viability checks
+- Lightly optimized lighting
+- Added rain weather event
+- Weather events now have cloud cover parameters
+- Drastically improved rain and splash effect
+- Cloud cover now influences temperature directly
+- Fixed broken ammo checks on mags removed from weapons
+- All rain parameters are now dynamic
+- Snow now has a similar falling effect as raining but slower
+- Ceiling objects now move according to the viewport center, not player
+- Temporarily removed snow blow weather effect
+- Added temp door to room
+- Door highlights on hover
+- Hover object calculation now determines object id not object's struct object
+- Bumped modifier max to 200 from 150
+- Fixed player colliding with a sticking in walls
+- Player collision is now static and does not rotate with them
+- Resprited door
+- Door can be opened by hovering and left clicking or simply hitting it
+- Added door sounds
+- Fixed ceiling objects displaying as "tree" on hover
+- Fixed season calculation to update on game-start
+- Added fog weather effect
+- Added wind level
+- Wind level can decrease ambient temperature
+- Added rain and wind ambience when applicable
+- Added weather sound dampening which makes player detectable noises mesh with weather sounds and harder for enemies to detect
+- Added wind direction calculation (will later play into ABS 4.0)
+- Wind direction now visibly affects rain fall direction
+- Added thunderstorm event
+- Added visible lightning strikes
+- Player can be killed by being hit by direct lightning strike
+- Added item heat capacity
+- Added individual item temperatures
+- Added individual item material types
+- Added material properties such as heat capacity
+- Individual item temperature fluctuates based on ambient temperature relative to the item and if it is with the player or on the ground in any given point
+- Rotting is now dependent on the actual temperature of the item not overall environmental temperature
+- Added external temperature which is a persistent measure of external heat not including fluctuations when entering and exiting roofed, protective, and independently heated structures
+- Fixed door opening randomly when player would rotate with nothing in hands
+- Fixed firearm colliders so doors open properly when hit by them
+- Added frostbitten state to limbs
+- All limbs now have cold susceptibility
+- Frostbite occurs as temperature lowers past 0 C and is based on cold susceptibility of a given limb
+- Dexterity reduces by 75% when hands are frostbitten
+- Fixed ground addition tiles from drawing under changed grass tiles and disappearing
+- Added invisible shadow casters that lack collisions
+- Added vertically swaying grass patches
+- Added collisionless shadowcasters to grass patches so they can be used as cover
+- Made minor optimizations to terrain and weather
+- Added more graphics optimization settings to settings.ini
+- Reduced nearby lightning strike chance
+- Significantly optimized new grass system
+- Removed splash effect from rainfall
+- Disabled invisible shadows
+- Added radiation storm event
+- Player starts indoors so as to not get instantly vaporized by the radiation storm if it spawns
+- Added system that now allows for multiple different colored random tile generation blends
+- Began prototyping room saving
+- Continued prototyping room saving
+- Room saving continues
+- Prototyped higher variability in environments
+- Increased the distance between the player and closeup lightning strikes
+- Terrain directly struck by lightning now gets damaged'
+- Lightning strikes are now either/or global or local, so strikes cannot happen simultaneously
+- Improved closeup lightning lighting and duration
+- Added lightning ignition of ground
+- Added fire
+- Added fire spread
+- Fixed bug stopping heat sources from correctly spawning
+- Fire replication now occurs further from the last lit patch
+- Limited maximum grass height further
+- Cleaned up for new update prep
