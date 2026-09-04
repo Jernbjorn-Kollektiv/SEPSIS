@@ -15,27 +15,28 @@ jobs:
           RELEASE_NAME: ${{ github.event.release.name }}
           RELEASE_BODY: ${{ github.event.release.body }}
           RELEASE_URL: ${{ github.event.release.html_url }}
+
         run: |
           jq -n \
             --arg title "$RELEASE_NAME" \
             --arg description "$RELEASE_BODY" \
             --arg url "$RELEASE_URL" \
             '{
-              content: " 🚀 A new SEPSIS update has been released!",
-              allowed_mentions: {
-              roles: ["1315386445564739604"]
-            },
+              content: "🚀 A new SEPSIS update has been released!",
               embeds: [
                 {
                   title: $title,
                   url: $url,
                   description: $description,
-                  color: 5814783,
+                  color: 5814783
                 }
               ]
             }' > payload.json
 
-          curl \
+          echo "Sending payload:"
+          cat payload.json
+
+          curl --fail-with-body \
             -H "Content-Type: application/json" \
             -d @payload.json \
             "$DISCORD_WEBHOOK"
